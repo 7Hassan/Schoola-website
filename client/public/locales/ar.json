@@ -3,7 +3,7 @@
     "logo": {
       "alt": "Home",
       "link": "#hero",
-      "image": "./public/icons/logoText.png"
+      "image": "/icons/logoText.png"
     },
 
     "navbar": [
