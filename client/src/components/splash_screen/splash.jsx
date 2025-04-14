@@ -3,13 +3,13 @@ import { init } from 'ityped';
 import './splash.scss';
 
 const letterImages = [
-  '/icons/s.png',
-  '/icons/c.png',
-  '/icons/h.png',
-  '/icons/o.png',
-  '/icons/o.png',
-  '/icons/l.png',
-  '/icons/a.png',
+  './public/icons/s.png',
+  './public/icons/c.png',
+  './public/icons/h.png',
+  './public/icons/o.png',
+  './public/icons/o.png',
+  './public/icons/l.png',
+  './public/icons/a.png',
 ];
 
 const Type = () => {

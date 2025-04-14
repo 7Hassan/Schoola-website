@@ -7,19 +7,20 @@
   flex-direction: column;
 }
 
-.container-text{
+.container-text {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row-reverse;
   margin-top: 20px;
   font-size: 25px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text);
   height: 30px;
 
 
 }
+
 .splash-text {
   display: flex;
   gap: 6px;
@@ -38,6 +39,7 @@
     min-height: 60px;
     margin-bottom: -3px;
   }
+
   &.letter-6 {
     margin-left: -3px;
   }
