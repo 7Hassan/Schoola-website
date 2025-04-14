@@ -8,14 +8,14 @@ const Contact = () => {
   return (
     <div className="contact-wh">
       <div className="contact-container">
-        <img src="./public/icons/text.png" alt="img" className="text-img" />
+        <img src="/icons/text.png" alt="img" className="text-img" />
         <a
           href={contact.button.link}
           target="_blank"
           className={contact.button.class}
         >
           <div className="h4">{contact.button.text}</div>
-          <img src="./public/icons/whats.png" alt="img" />
+          <img src="/icons/whats.png" alt="img" />
         </a>
       </div>
     </div>

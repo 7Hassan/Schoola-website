@@ -18,19 +18,19 @@
     }
   },
   "hero": {
-    "imgLink": "./public/images/hero2.jpeg",
+    "imgLink": "/images/hero2.jpeg",
     "heroText": "طور مهارات طفلك  <br> مع <span class='text-high'> Schoola <span/> ",
     "subtitle": [
       {
-        "imgLink": "./public/icons/true-blue.png",
+        "imgLink": "/icons/true-blue.png",
         "text": "حصص برمجة مباشرة عبر الإنترنت <span class='text-color'>تناسب طفلك</span>"
       },
       {
-        "imgLink": "./public/icons/true-blue.png",
+        "imgLink": "/icons/true-blue.png",
         "text": "اكتساب مهارات <span class='text-color'> ريادة الاعمال و العمل الحر</span> "
       },
       {
-        "imgLink": "./public/icons/true-blue.png",
+        "imgLink": "/icons/true-blue.png",
         "text": "<span class='text-color'>مشاريع حقيقية وفرص تطبيقية </span> تبرز مهارات أطفالك وتحفز إبداعهم"
       }
     ],
@@ -57,35 +57,35 @@
     "icons": [
       {
         "text": "ريادة الأعمال",
-        "imgLink": "./public/images/business.png"
+        "imgLink": "/images/business.png"
       },
       {
         "text": "العمل الحر",
-        "imgLink": "./public/images/freelance.png"
+        "imgLink": "/images/freelance.png"
       },
       {
         "text": "التفكير الإبداعي",
-        "imgLink": "./public/images/idea.png"
+        "imgLink": "/images/idea.png"
       },
       {
         "text": "الثقة بالنفس",
-        "imgLink": "./public/images/confidence.png"
+        "imgLink": "/images/confidence.png"
       },
       {
         "text": "مهارات التواصل",
-        "imgLink": "./public/images/communication.png"
+        "imgLink": "/images/communication.png"
       },
       {
         "text": "حل و إدارة المشكلات",
-        "imgLink": "./public/images/problem.png"
+        "imgLink": "/images/problem.png"
       },
       {
         "text": "العمل الجماعي",
-        "imgLink": "./public/images/team.png"
+        "imgLink": "/images/team.png"
       },
       {
         "text": "مهارات العرض",
-        "imgLink": "./public/images/presentation.png"
+        "imgLink": "/images/presentation.png"
       }
     ]
   },
@@ -98,35 +98,35 @@
     "icons": [
       {
         "text": "الذكاء الإصطناعي",
-        "imgLink": "./public/images/ai.png"
+        "imgLink": "/images/ai.png"
       },
       {
         "text": "تصميم المواقع والتطبيقات",
-        "imgLink": "./public/images/design.png"
+        "imgLink": "/images/design.png"
       },
       {
         "text": "برمجة المواقع",
-        "imgLink": "./public/images/web.png"
+        "imgLink": "/images/web.png"
       },
       {
         "text": "برمجة تطبيقات الهاتف المحمول",
-        "imgLink": "./public/images/mobile.png"
+        "imgLink": "/images/mobile.png"
       },
       {
         "text": "انترنت الأشياء",
-        "imgLink": "./public/images/iot.png"
+        "imgLink": "/images/iot.png"
       },
       {
         "text": "تصميم وبرمجة الألعاب",
-        "imgLink": "./public/images/games.png"
+        "imgLink": "/images/games.png"
       },
       {
         "text": "بناء و برمجة الروبوتات",
-        "imgLink": "./public/images/robotics.png"
+        "imgLink": "/images/robotics.png"
       },
       {
         "text": "بايثون وعلوم البيانات",
-        "imgLink": "./public/images/data.png"
+        "imgLink": "/images/data.png"
       }
     ]
   },
@@ -134,7 +134,7 @@
     "header": {
       "title": "مسار التعلم الخاصة بطفلك",
       "subtitle": "حدد <span>صف</span> الطالب لاستكشاف مسار التعلم الموصى به",
-      "img": "./public/icons/flag-step.png"
+      "img": "/icons/flag-step.png"
     }
   },
   "gallery": {
@@ -244,15 +244,15 @@
     }
   },
   "footer": {
-    "logo": "./public/icons/logo_white.png",
+    "logo": "/icons/logo_white.png",
     "text": "سكولة النهاردة .. نجاح بكرة",
     "social": [
       {
-        "img": "./public/icons/whatsapp.png",
+        "img": "/icons/whatsapp.png",
         "link": "https://wa.me/201558570124"
       },
       {
-        "img": "./public/icons/fc.png",
+        "img": "/icons/fc.png",
         "link": "https://www.facebook.com/Schoola.academic"
       }
     ],
@@ -261,24 +261,24 @@
       "list": [
         {
           "text": "البرمجة للاطفال",
-          "imgLink": "./public/icons/true.png"
+          "imgLink": "/icons/true.png"
         },
         {
           "text": "الذكاء الاصطناعي",
-          "imgLink": "./public/icons/true.png"
+          "imgLink": "/icons/true.png"
         },
 
         {
           "text": "تطبيقات الموبيل",
-          "imgLink": "./public/icons/true.png"
+          "imgLink": "/icons/true.png"
         },
         {
           "text": "تطوير الموقع",
-          "imgLink": "./public/icons/true.png"
+          "imgLink": "/icons/true.png"
         },
         {
           "text": "التصميم",
-          "imgLink": "./public/icons/true.png"
+          "imgLink": "/icons/true.png"
         }
       ]
     },

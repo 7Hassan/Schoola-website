@@ -31,7 +31,7 @@ const Mission = () => {
 const Vision = () => {
   return (
     <div className="container-div vision">
-      {/* <img src="./public/images/mission.avif" alt="" className="about-img" /> */}
+      {/* <img src="/images/mission.avif" alt="" className="about-img" /> */}
       <div className="sub-sec">
         <div className="title">
           <h1 className="title-text">رؤيتنا</h1>

@@ -56,19 +56,19 @@ export const InfiniteSlider = ({ list, reversed = false, Item }) => {
 };
 const baseRewards = {
   certificate: {
-    img: './public/icons/certificate-icon.png',
+    img: '/icons/certificate-icon.png',
     text: 'شهادة اتمام المستوي',
   },
   project: {
-    img: './public/icons/final-project.png',
+    img: '/icons/final-project.png',
     text: 'مشروع نهائي',
   },
   business: {
-    img: './public/icons/business-icon.png',
+    img: '/icons/business-icon.png',
     text: 'حصص ريادة اعمال',
   },
   freelance: {
-    img: './public/images/freelance.png',
+    img: '/images/freelance.png',
     text: 'حصص العمل الحر',
   },
 };

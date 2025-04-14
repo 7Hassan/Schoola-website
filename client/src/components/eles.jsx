@@ -8,13 +8,13 @@ const Student = () => {
   return (
     <div className="student">
       <div className="img">
-        <img src="./public/images/student.jpeg" alt="img" loading="lazy" />
+        <img src="/images/student.jpeg" alt="img" loading="lazy" />
       </div>
       <div className="info">
         <div className="row">
           <h5>محمد حسن علي</h5>
           <div className="country">
-            <img src="./public/images/egy.png" alt="img" loading="lazy" />
+            <img src="/images/egy.png" alt="img" loading="lazy" />
           </div>
         </div>
         <div className="row">

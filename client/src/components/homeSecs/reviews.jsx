@@ -137,17 +137,12 @@ const Review = ({ data }) => {
           <span className="text-light"> ولي أمر</span>
         </h5>
         <div className="country">
-          <img src="./public/images/egy.png" alt="img" loading="lazy" />
+          <img src="/images/egy.png" alt="img" loading="lazy" />
         </div>
       </div>
       <div className="stars row">
         {Array.from({ length: data.stars }).map((_, index) => (
-          <img
-            key={index}
-            src="./public/icons/star.png"
-            alt="star"
-            loading="lazy"
-          />
+          <img key={index} src="/icons/star.png" alt="star" loading="lazy" />
         ))}
       </div>
     </div>
