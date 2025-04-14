@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import './gallery.scss';
 
 const rawImages = [
-
   'https://imgur.com/FtSwvVG',
   'https://imgur.com/HPdjYuF',
   'https://imgur.com/undefined',
@@ -36,18 +35,13 @@ const Header = () => {
     <div className="header">
       <div className="row title">
         <img
-          src="/public/icons/stars.png"
+          src="/icons/stars.png"
           alt="img"
           loading="lazy"
           className="right"
         />
         <h2>{header.title}</h2>
-        <img
-          src="/public/icons/stars.png"
-          alt="img"
-          loading="lazy"
-          className="left"
-        />
+        <img src="/icons/stars.png" alt="img" loading="lazy" className="left" />
       </div>
       <h4 className="text-light sub-title">
         {header.subTitle}

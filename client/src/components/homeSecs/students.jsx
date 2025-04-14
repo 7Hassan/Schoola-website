@@ -115,7 +115,6 @@ const studentsImages = [
 
 const studentsImagesReversed = [...studentsImages].reverse();
 
-
 const Student = ({ data }) => {
   if (!data) return null;
   const directLink = convertToDirectLink(data.imageUrl);
@@ -148,14 +147,14 @@ const Header = () => {
     <div className="header">
       <div className="row title">
         <img
-          src="/public/icons/stars.png"
+          src="/icons/stars.png"
           alt="stars"
           loading="lazy"
           className="right"
         />
         <h3>{header.title}</h3>
         <img
-          src="/public/icons/stars.png"
+          src="/icons/stars.png"
           alt="stars"
           loading="lazy"
           className="left"
