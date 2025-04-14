@@ -27,7 +27,7 @@ const SplashScreen = () => {
       loop: false,
       startDelay: 1500,
       showCursor: true,
-      typeSpeed: 30,
+      typeSpeed: 40,
       strings: ['Coding for kids'],
       cursorChar: '',
     });

@@ -69,22 +69,18 @@ function App() {
     loadSplash();
   }, []);
 
-  // مبنستناش window.load
   useEffect(() => {
     setLoading(false);
   }, []);
 
-  // مرحلة التحميل
   if (loading || !imagesLoaded) {
     return <PreLoading />;
   }
 
-  // شاشة البداية
-  if (!splash) {
+  if (splash) {
     return <SplashScreen />;
   }
 
-  // التطبيق الأساسي
   return (
     <Router>
       {' '}
