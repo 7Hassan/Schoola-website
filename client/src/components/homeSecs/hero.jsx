@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import './hero.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import { convertToDirectLink } from '../../utils/eles';
 
 const Hero = () => {
   const { t } = useTranslation();

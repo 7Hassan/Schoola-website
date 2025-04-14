@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { InfiniteSlider } from '../../utils/eles';
-import './Reviews.scss';
+import './reviews.scss';
 
 const reviews = [
   {

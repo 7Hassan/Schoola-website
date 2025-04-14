@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './Gallery.scss';
 import { useTranslation } from 'react-i18next';
+import './gallery.scss';
 
 const rawImages = [
 
