@@ -3,13 +3,13 @@ import { init } from 'ityped';
 import './splash.scss';
 
 const letterImages = [
-  './public/icons/s.png',
-  './public/icons/c.png',
-  './public/icons/h.png',
-  './public/icons/o.png',
-  './public/icons/o.png',
-  './public/icons/l.png',
-  './public/icons/a.png',
+  '/icons/s.png',
+  '/icons/c.png',
+  '/icons/h.png',
+  '/icons/o.png',
+  '/icons/o.png',
+  '/icons/l.png',
+  '/icons/a.png',
 ];
 
 const Type = () => {
@@ -25,9 +25,9 @@ const SplashScreen = () => {
     if (text) return;
     init(textRef.current, {
       loop: false,
-      startDelay: 1300,
+      startDelay: 1500,
       showCursor: true,
-      typeSpeed: 20,
+      typeSpeed: 30,
       strings: ['Coding for kids'],
       cursorChar: '',
     });
