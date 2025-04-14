@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import './contact-wh.scss';
+import { whatsAppLink } from '../../utils/eles';
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -10,7 +11,7 @@ const Contact = () => {
       <div className="contact-container">
         <img src="/icons/text.png" alt="img" className="text-img" />
         <a
-          href={contact.button.link}
+          href={whatsAppLink(contact.button.msg)}
           target="_blank"
           className={contact.button.class}
         >

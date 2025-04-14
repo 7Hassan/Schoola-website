@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import './hero.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { whatsAppLink } from '../../utils/eles';
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -35,7 +36,7 @@ const Hero = () => {
         <div className="btns row">
           {heroContent.buttons.map((item, index) => (
             <a
-              href={item.link}
+              href={whatsAppLink(item.msg)}
               key={index}
               className={item.class}
               target="_blank"

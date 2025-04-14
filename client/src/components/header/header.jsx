@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import './header.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe, faBars } from '@fortawesome/free-solid-svg-icons';
+import { whatsAppLink } from '../../utils/eles';
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
@@ -28,7 +29,11 @@ const OtherLinks = () => {
 
   return (
     <div className="navbtns-wrapper">
-      <a href={navLinkItems.link} className="btn bg primary-btn">
+      <a
+        href={whatsAppLink(navLinkItems.msg)}
+        className="btn bg primary-btn"
+        target="_blank"
+      >
         {navLinkItems.title}
       </a>
     </div>

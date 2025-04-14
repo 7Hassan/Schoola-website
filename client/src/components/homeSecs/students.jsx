@@ -181,9 +181,14 @@ const Students = () => {
         />
         <div className="btns row">
           {btns.map((item, index) => (
-            <Link to={item.link} key={index} className={item.class}>
+            <a
+              href={item.link}
+              key={index}
+              className={item.class}
+              target="_blank"
+            >
               <div className="h4">{item.text}</div>
-            </Link>
+            </a>
           ))}
         </div>
       </section>

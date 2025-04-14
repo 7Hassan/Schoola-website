@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import React from 'react';
 import './video.scss';
 import { Link } from 'react-router-dom';
+import { whatsAppLink } from '../../utils/eles';
 
 const VideoPlayer = () => {
   return (
@@ -35,7 +36,7 @@ const Video = () => {
       <div className="btns row">
         {video.buttons.map((button, index) => (
           <a
-            href={button.link}
+            href={whatsAppLink(button.msg)}
             className={button.class}
             key={index}
             target="_blank"
