@@ -1,0 +1,256 @@
+// متغيرات
+:root {
+  --gap: 40px;
+  --padding-x: 5vw;
+  --hero-max-width: 1440px;
+  --hero-img-max-width: 600px;
+  --font-h4: 20px;
+}
+
+// المكون الرئيسي
+.hero {
+  display: grid;
+  grid-template-columns: 1fr minmax(30vw, auto);
+  grid-template-rows: auto;
+  place-items: center;
+  width: 100%;
+  max-width: var(--hero-max-width);
+  // min-height: 110vh;
+  padding: 110px var(--padding-x) 0;
+  margin: 0 auto;
+
+  .hero-text {
+    font-size: 60px;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    white-space: nowrap;
+    line-height: 110px;
+
+    .first {
+      font-size: 80px;
+      color: var(--orange);
+    }
+
+    .second span {
+      font-size: 90px;
+      color: var(--blue);
+      position: relative;
+
+      &::after {
+        content: "";
+        background: url(/public/icons/lines-larg.png) no-repeat center/contain;
+        position: absolute;
+        top: 7px;
+        left: -38px;
+        height: 2.5rem;
+        width: 100%;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .hero-img {
+    width: 50vw;
+    max-width: var(--hero-img-max-width);
+    object-fit: contain;
+    overflow: visible;
+    overflow: hidden;
+
+    .heroImg {
+      display: unset;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+
+
+      &.small {
+        display: none;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
+
+  .btns {
+    .primary-btn {
+
+      min-width: 240px;
+    }
+
+    .whatsapp {
+      min-width: 120px;
+    }
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 0;
+    gap: 2px;
+
+    .hero-text-img {
+      margin-bottom: 25px;
+      width: 100%;
+      max-width: 400px;
+
+      &.small {
+        display: none;
+      }
+    }
+
+    h1 {
+      font-weight: 800;
+      line-height: 56px;
+
+      .text-high {
+        font-weight: 800;
+        letter-spacing: 1.1px;
+      }
+    }
+
+    .subtitle {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      margin-bottom: 30px;
+
+      .h4 {
+        font-weight: 500;
+        font-size: var(--font-h4);
+      }
+
+      .check-point-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 25px;
+        line-height: 37px;
+
+        svg {
+          color: var(--blue);
+          margin-top: 3px;
+          font-size: 1.2rem;
+        }
+      }
+
+      .text-color {
+        color: var(--blue);
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    .h4 {
+      font-size: 20px !important;
+    }
+
+    .h4 {
+      font-size: 14px !important;
+    }
+
+    .primary-btn {
+      min-width: 190px !important;
+    }
+
+    .h5 {
+      font-size: 12px;
+    }
+
+  }
+}
+
+
+
+
+
+@media (max-width: 767px) {
+  .hero {
+    max-width: 100vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+
+    .hero-img {
+      grid-area: 1 / 1 / 2 / 2;
+      min-width: 100%;
+
+      .heroImg {
+        display: none !important;
+
+        &.small {
+          display: unset !important;
+        }
+      }
+    }
+
+    .hero-text-img {
+      display: none;
+      min-width: 100%;
+      object-position: center;
+      height: auto;
+
+      &.small {
+        border: none !important;
+        display: unset !important;
+      }
+    }
+
+    .primary-btn {
+      min-width: 240px !important;
+    }
+
+    .btns {
+      flex-wrap: wrap;
+    }
+
+
+    .text {
+      align-items: center;
+
+      .btns {
+        .h4 {
+          font-size: 16px;
+
+        }
+
+        .h5 {
+          font-size: 15px;
+        }
+      }
+
+      .text-video {
+        font-size: 18px;
+      }
+
+      .h4 {
+        font-size: 18px !important;
+        line-height: 170% !important;
+      }
+    }
+
+
+  }
+}
+
+@media (max-width: 479px) {
+  .hero {
+
+    .text {
+      padding: 0 20px;
+      max-width: 100vw;
+
+      .check-point-row {
+        margin-bottom: 15px !important;
+      }
+    }
+
+  }
+}

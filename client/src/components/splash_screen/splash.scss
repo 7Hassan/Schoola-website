@@ -1,0 +1,64 @@
+.splash-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+  flex-direction: column;
+}
+
+.container-text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--text);
+  height: 30px;
+
+
+}
+.splash-text {
+  display: flex;
+  gap: 6px;
+  flex-direction: row-reverse;
+  align-items: end;
+}
+
+.wave-letter {
+  display: inline-block;
+  width: auto;
+  max-height: 52px;
+  animation: wave .8s ease-in-out;
+  animation-delay: calc(var(--i) * 0.1s);
+
+  &.letter-0 {
+    min-height: 60px;
+    margin-bottom: -3px;
+  }
+  &.letter-6 {
+    margin-left: -3px;
+  }
+
+  &.letter-1,
+  &.letter-3,
+  &.letter-4,
+  &.letter-6 {
+    max-height: 40px;
+  }
+
+}
+
+@keyframes wave {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}

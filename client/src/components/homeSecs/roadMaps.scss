@@ -1,0 +1,232 @@
+.road-maps {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      #ecf8ffcc 10%,
+      #ecf8ffcc 80%,
+      rgba(255, 255, 255, 0) 100%);
+
+  .img-course {
+    max-width: 90%;
+
+    &.hide {
+      display: none;
+    }
+  }
+
+  .img-laptop {
+    display: unset;
+  }
+
+  .img-mobile {
+    display: none;
+  }
+
+  .header-content {
+    .text-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: nowrap;
+      gap: 7px;
+
+      img {
+        max-width: 42px;
+        margin-bottom: 15px;
+      }
+    }
+
+    .text-light {
+      font-size: 20px;
+      margin-top: 15px;
+      font-weight: 600;
+
+      span {
+        color: var(--blue);
+        opacity: 1 !important;
+      }
+    }
+  }
+
+  .switcher {
+    background-color: white;
+    border-radius: 42px;
+    gap: 0;
+    width: 100%;
+    justify-content: space-between;
+    max-width: 800px;
+    margin-bottom: 50px;
+
+    button {
+      border: none;
+      width: 15%;
+      cursor: pointer;
+      font-size: 20px;
+      border: none;
+      position: relative;
+      padding: 0;
+      padding: 10px 3px;
+      color: var(--text-color);
+
+
+      &.active {
+        background-color: var(--blue);
+        color: white;
+      }
+    }
+  }
+
+  .active-sec {
+    min-height: 150px;
+    margin-top: 20px;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    &.fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &.fade-out {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
+
+  button {
+    &:hover {
+      transform: none;
+
+    }
+  }
+
+  .plans {
+    margin-top: 80px;
+
+    h2 {
+      margin-bottom: 30px;
+    }
+
+    .selected {
+      max-width: 250px;
+      margin: 20px auto 30px;
+      background-color: var(--orange);
+      color: white;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 21px;
+    }
+
+    .plans-container {
+      width: 100%;
+      overflow: scroll;
+
+
+      .pricing-plans {
+        width: 1200px;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        gap: 30px;
+        padding: 70px 0 20px;
+      }
+
+    }
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .road-maps {
+    .plans-container {
+      max-width: 100vw;
+    }
+  }
+
+
+  @media (max-width: 991px) {
+    .road-maps {
+      .plans {
+        .pricing-plans {
+          grid-column-gap: 16px;
+          grid-row-gap: 0px;
+          grid-template-columns: 1fr 1fr 1fr;
+          place-content: stretch start;
+          justify-items: center;
+          padding-left: 40px;
+          padding-right: 40px;
+          overflow: auto;
+        }
+      }
+    }
+
+  }
+}
+
+@media (max-width: 767px) {
+  .road-maps {
+    .img-course {
+      margin-top: -50px;
+    }
+
+    .img-laptop {
+      display: none;
+    }
+
+    .img-mobile {
+      display: unset;
+    }
+
+    .plans-container {
+      overflow: hidden;
+
+      .pricing-plans {
+        width: 100% !important;
+        padding: 0 !important;
+        flex-direction: column;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 0 !important;
+
+        .pricing-card2 {
+          margin-bottom: 40px;
+        }
+
+      }
+    }
+
+    .switcher {
+      gap: 10px;
+
+      button {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+    }
+
+  }
+}
+
+@media (max-width: 479px) {
+  .road-maps {
+    grid-row-gap: 20px !important;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    .switcher {
+      button {
+        span {
+          display: none;
+        }
+      }
+    }
+
+  }
+}

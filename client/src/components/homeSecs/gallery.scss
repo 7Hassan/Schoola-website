@@ -1,0 +1,71 @@
+.students-gallery {
+  grid-row-gap: 0px;
+}
+
+
+.gallery-container {
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+}
+
+.header {
+  h2 {
+    margin: 0 20px !important;
+  }
+
+  .title {
+    gap: 4px;
+
+    img {
+      width: 70px;
+
+      &.left {
+        transform: scaleX(-1);
+      }
+    }
+  }
+
+  .sub-title {
+    line-height: 35px;
+    margin-top: 10px;
+    opacity: 1;
+    font-weight: 600;
+  }
+}
+
+.gallery {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 10px;
+  animation: scrollGallery var(--scroll-speed, 10s) linear infinite;
+}
+
+@keyframes scrollGallery {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+.image-container {
+  width: calc(33.33% - 5px);
+  max-width: 200px;
+  height: auto;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,186 @@
+@use '../../global'as *;
+@import './../../utils/mixins.scss';
+
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: red;
+  font-size: 20px;
+}
+
+.students {
+  grid-row-gap: 8px !important;
+
+  &.sec {
+    margin: 100px auto 0;
+  }
+
+  .title {
+    gap: 4px;
+
+    img {
+      width: 70px;
+
+      &.left {
+        transform: scaleX(-1);
+      }
+    }
+  }
+
+  .header {
+
+    margin-bottom: 20px;
+  }
+
+  .journey {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+
+    img {
+      max-width: 30px;
+    }
+  }
+
+  .sub-title {
+    line-height: 35px;
+    margin-bottom: 30px;
+    margin: 10px;
+    opacity: 1;
+    font-weight: 600;
+
+  }
+
+  .student-section {
+    width: 100%;
+    @include infinite-loop($width: 300px, $height: 400px, $time:200s);
+
+    .btns {
+      margin-top: 40px;
+
+      .whatsapp {
+        min-width: 217px;
+      }
+    }
+
+    .item {
+      height: 100%;
+
+    }
+
+    .student {
+      $border: 0px;
+      border-radius: $border;
+      overflow: hidden;
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+
+      .img-student {
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .info {
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+        min-height: 30px;
+        padding: 5px 5px 10px;
+
+        .row {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .row-bar {
+            $height: 30px;
+            border-radius: 100px;
+            background-color: #FF7F1B;
+            height: $height;
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            .circle {
+              position: absolute;
+              right: 0;
+              width: $height;
+              height: $height;
+              border-radius: 50%;
+              background-color: #FFD701;
+
+              img {
+                width: 100%;
+              }
+            }
+
+            h5 {
+              font-size: 14px;
+              color: white;
+              white-space: nowrap;
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 991px) {}
+
+@media (max-width: 767px) {
+  .student-section {
+    width: 100%;
+    @include infinite-loop($width: 200px, $height: 350px, $time:200s);
+    .row-bar {
+      width: 90% !important;
+
+    }
+
+  }
+}
+
+@media (max-width: 500px) {
+  .students {
+    .student-section {
+      @include infinite-loop($width: 190px, $height: 262.5px, $time: 200s);
+
+
+    }
+
+    .header {
+      .sub-title {
+        line-height: 150%;
+      }
+
+      .title {
+        padding: 0 10px;
+
+        h3 {
+          text-align: center;
+          font-size: 20px;
+        }
+
+        img {
+          width: 50px;
+        }
+      }
+    }
+  }
+}

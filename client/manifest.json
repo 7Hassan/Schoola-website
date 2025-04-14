@@ -1,0 +1,22 @@
+{
+  "short_name": "Schoola",
+  "name": "Schoola",
+  "background_color": "#066CEE",
+  "theme_color": "#066CEE",
+  "id": "/",
+  "start_url": "./",
+  "display": "standalone",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "./src/assets/images/Logo.png",
+      "size": "168x168",
+      "type": "image/png"
+    },
+    {
+      "src": "./src/assets/images/Logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

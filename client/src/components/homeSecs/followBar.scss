@@ -1,0 +1,27 @@
+.bar-sec {
+  width: 100%;
+  background-color: var(--blue);
+  height: 60vh;
+  max-height: 200px;
+  margin-top: 50px;
+
+  .container {
+    justify-content: space-between !important;
+    color: var(--white);
+    width: 80%;
+
+    .text {
+      font-size: 18px;
+      h3 {
+        margin-bottom: 16px;
+        font-size: 20px;
+      }
+    }
+
+    .btn {
+      width: 200px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+}

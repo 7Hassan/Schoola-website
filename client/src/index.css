@@ -1,0 +1,134 @@
+@font-face {
+  font-family: 'Somar Rounded';
+  src: url('./assets/fonts/SomarRounded-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Somar Rounded';
+  src: url('./assets/fonts/SomarRounded-Bold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Somar Rounded';
+  src: url('./assets/fonts/SomarRounded-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Somar Rounded';
+  src: url('./assets/fonts/SomarRounded-Medium.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Somar Rounded';
+  src: url('./assets/fonts/SomarRounded-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Somar Rounded';
+  src: url('./assets/fonts/SomarRounded-Thin.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+
+  --blue: #056fec;
+  --yellow: #ffd701;
+  --whatsapp: #25d366;
+  --white: white;
+  --orange: #ff7f1c;
+  --border: #d9b79326;
+  --text: #1f2a55;
+  --light-slate-grey: #898fa6;
+  --gray-1: #ecf8ff;
+  --gray-80: #ecf8ffcc;
+  --untitled-ui-gray900: #101828;
+  --light-grey: #d2d4dd;
+  --untitled-ui-gray600: #475467;
+  --untitled-ui-gray400: #98a2b3;
+  --untitled-ui-gray500: #667085;
+  --untitled-ui-white: white;
+  --untitled-ui-primary700: #6941c6;
+  --untitled-ui-primary800: #53389e;
+  --untitled-ui-primary600: #7f56d9;
+  --untitled-ui-primary100: #f4ebff;
+  --untitled-ui-gray300: #d0d5dd;
+  --untitled-ui-gray700: #344054;
+  --untitled-ui-gray50: #f9fafb;
+  --untitled-ui-gray800: #1d2939;
+  --untitled-ui-gray100: #f2f4f7;
+  --untitled-ui-primary500: #9e77ed;
+  --untitled-ui-primary50: #f9f5ff;
+  --dark-orange: #ff942c;
+  --alice-blue: #e2f8ff;
+  --border_counter: #1f2a5526;
+  --conversion-flow-library-medium-purple: #b16cea;
+  --conversion-flow-library-sandy-brown: #ffa84b;
+  --midnight-blue: #1f2a55;
+  --borders: black;
+  --untitled-ui-gray200: #eaecf0;
+  --untitled-ui-warning300: #fec84b;
+  --midnight-blue-2: #1f2a55;
+  --untitled-ui-primary300: #d6bbfb;
+  --untitled-ui-primary200: #e9d7fe;
+  --untitled-ui-primary900: #42307d;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+html[lang="ar"] {
+  direction: rtl;
+}
+
+html[lang="en"] {
+  direction: ltr;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Somar Rounded', sans-serif;
+}
+
+
+
+
+body {
+  margin: auto;
+  display: block;
+  overflow-x: hidden !important;
+  background-color: #fff;
+  min-height: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+main {
+  overflow: hidden;
+}
+
