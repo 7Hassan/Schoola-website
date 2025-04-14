@@ -53,7 +53,7 @@ function App() {
         const timer = setTimeout(() => {
           setSplash(false);
           Cookies.set('visitedBefore', 'true', { expires: 30 });
-        }, 2500);
+        }, 3500);
         return () => clearTimeout(timer);
       }
     };
