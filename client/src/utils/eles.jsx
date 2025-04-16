@@ -156,8 +156,7 @@ export const grades = [
     grade: '1-2',
     age: '7-8',
     images: {
-      mobile: 'https://i.imgur.com/r9IiJZ0.jpg',
-
+      mobile: 'https://i.imgur.com/19URYli.jpg',
       laptop: 'https://i.imgur.com/hrCrHqf.jpg',
     },
     plans: [
@@ -203,7 +202,7 @@ export const grades = [
     grade: '3-4',
     age: '9-10',
     images: {
-      mobile: 'https://i.imgur.com/19URYli.jpg',
+      mobile: 'https://i.imgur.com/r9IiJZ0.jpg',
       laptop: 'https://i.imgur.com/7FrarxL.jpg',
     },
 
