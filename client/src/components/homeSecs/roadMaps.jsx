@@ -1,21 +1,17 @@
 import { useTranslation } from 'react-i18next';
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import PlanCard from './plan';
 import './roadMaps.scss';
 import { grades } from '../../utils/eles';
 
-const Switcher = ({ selectedGrade, setSelectedGrade, setIsAnimating }) => {
+const Switcher = ({ selectedGrade, setSelectedGrade }) => {
   const handleGradeChange = useCallback(
     (newGrade) => {
       if (newGrade.grade !== selectedGrade.grade) {
-        setIsAnimating(true);
-        setTimeout(() => {
-          setSelectedGrade(newGrade);
-          setIsAnimating(false);
-        }, 300);
+        setSelectedGrade(newGrade);
       }
     },
-    [selectedGrade, setSelectedGrade, setIsAnimating] // تحسين: قيد التحديث بناءً على selectedGrade فقط
+    [selectedGrade, setSelectedGrade]
   );
 
   return (
@@ -51,38 +47,47 @@ const Header = () => {
   );
 };
 
-const ActiveSection = ({ isAnimating, selectedGrade, allImages }) => {
-  const { grade, age } = selectedGrade;
-  const plans = useMemo(() => selectedGrade.plans, [selectedGrade]);
+const ActiveSection = ({ selectedGrade }) => {
+  const { age } = selectedGrade;
+  const isMobile = window.innerWidth <= 768;
+  const [animationClass, setAnimationClass] = useState('');
+  const [currentGrade, setCurrentGrade] = useState(selectedGrade);
+
+  useEffect(() => {
+    if (selectedGrade.grade !== currentGrade.grade) {
+      setAnimationClass('fade-out');
+      setTimeout(() => {
+        setCurrentGrade(selectedGrade);
+      }, 300);
+    }
+  }, [selectedGrade, currentGrade]);
+
+  const handleImageLoad = () => {
+    setAnimationClass('fade-in');
+  };
 
   return (
-    <div className={`active-sec ${isAnimating ? 'fade-out' : 'fade-in'}`}>
-      {allImages.map((obj) => (
-        <div key={obj.grade}>
-          <img
-            src={obj.mobile}
-            alt={obj.grade}
-            className={`img-mobile img-course ${
-              obj.grade !== selectedGrade.grade && 'hide'
-            }`}
-            loading="lazy"
-          />
-          <img
-            src={obj.laptop}
-            alt={obj.grade}
-            className={`img-laptop img-course ${
-              obj.grade !== selectedGrade.grade && 'hide'
-            }`}
-            loading="lazy"
-          />
-        </div>
-      ))}
+    <div className={`active-sec ${animationClass}`}>
+      <div>
+        <img
+          src={
+            isMobile ? currentGrade.images.mobile : currentGrade.images.laptop
+          }
+          alt={currentGrade.grade}
+          className="img-course"
+          onLoad={handleImageLoad}
+          loading="lazy"
+        />
+      </div>
       <div className="plans">
         <h2>خطط الاسعار</h2>
         <div className="plans-container">
           <div className="pricing-plans">
-            {plans.map((plan) => (
-              <PlanCard key={plan.info.id} plan={{ ...plan, age, grade }} />
+            {currentGrade.plans.map((plan) => (
+              <PlanCard
+                key={plan.info.id}
+                plan={{ ...plan, age, grade: currentGrade.grade }}
+              />
             ))}
           </div>
         </div>
@@ -92,16 +97,7 @@ const ActiveSection = ({ isAnimating, selectedGrade, allImages }) => {
 };
 
 const RoadMaps = () => {
-  const [isAnimating, setIsAnimating] = useState(false);
   const [selectedGrade, setSelectedGrade] = useState(grades[0]);
-
-  const allImages = useMemo(() => {
-    return grades.map((grade) => ({
-      grade: grade.grade,
-      mobile: grade.images.mobile,
-      laptop: grade.images.laptop,
-    }));
-  }, []);
 
   return (
     <div id="courses" className="road-maps sec header-sec">
@@ -109,13 +105,8 @@ const RoadMaps = () => {
       <Switcher
         selectedGrade={selectedGrade}
         setSelectedGrade={setSelectedGrade}
-        setIsAnimating={setIsAnimating}
       />
-      <ActiveSection
-        isAnimating={isAnimating}
-        selectedGrade={selectedGrade}
-        allImages={allImages}
-      />
+      <ActiveSection selectedGrade={selectedGrade} />
     </div>
   );
 };

@@ -14,6 +14,7 @@ function App() {
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
   const images = [
+    '/images/hero-img.png',
     '/icons/s.png',
     '/icons/c.png',
     '/icons/h.png',

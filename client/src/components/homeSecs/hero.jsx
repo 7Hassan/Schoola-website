@@ -4,23 +4,37 @@ import './hero.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { whatsAppLink } from '../../utils/eles';
+import { useEffect, useState } from 'react';
 
 const Hero = () => {
   const { t } = useTranslation();
   const heroContent = t('hero', { returnObjects: true });
 
+  const [isMobile, setIsMobile] = useState(false);
+  console.log('🚀 ~ isMobile:', isMobile)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize(); // تحديد الحالة عند التحميل
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div id="hero" className="hero">
       <div className="text">
         <img
-          src="https://i.imgur.com/eOhaVyO.jpg"
+          src={
+            isMobile
+              ? 'https://i.imgur.com/b9J0Pd3.jpg'
+              : 'https://i.imgur.com/eOhaVyO.jpg'
+          }
           alt=""
           className="hero-text-img"
-        />
-        <img
-          src="https://i.imgur.com/b9J0Pd3.jpg"
-          alt=""
-          className="hero-text-img small"
         />
         <div className="subtitle">
           {heroContent.subtitle.map((item, index) => (
@@ -47,11 +61,14 @@ const Hero = () => {
         </div>
       </div>
       <div className="hero-img">
-        <img src="https://i.imgur.com/zw0pU6l.jpg" alt="" className="heroImg" />
         <img
-          src="https://i.imgur.com/jjoLhfT.jpg"
+          src={
+            isMobile
+              ? '/images/hero-img.png'
+              : 'https://i.imgur.com/zw0pU6l.jpg'
+          }
           alt=""
-          className="heroImg small"
+          className="heroImg"
         />
       </div>
     </div>

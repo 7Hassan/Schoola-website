@@ -57,16 +57,9 @@
     overflow: hidden;
 
     .heroImg {
-      display: unset;
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
 
-
-      &.small {
-        display: none;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-      }
     }
   }
 
@@ -93,10 +86,6 @@
       margin-bottom: 25px;
       width: 100%;
       max-width: 400px;
-
-      &.small {
-        display: none;
-      }
     }
 
     h1 {
@@ -183,24 +172,16 @@
       min-width: 100%;
 
       .heroImg {
-        display: none !important;
-
-        &.small {
-          display: unset !important;
-        }
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
       }
     }
 
     .hero-text-img {
-      display: none;
       min-width: 100%;
       object-position: center;
       height: auto;
-
-      &.small {
-        border: none !important;
-        display: unset !important;
-      }
+      border: none !important;
     }
 
     .primary-btn {
