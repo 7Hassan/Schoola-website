@@ -174,11 +174,11 @@ const Students = () => {
       <Header />
       <section className="student-section">
         <InfiniteSlider list={studentsImages} Item={Student} />
-        <InfiniteSlider
+        {/* <InfiniteSlider
           list={studentsImagesReversed}
           Item={Student}
           reversed={true}
-        />
+        /> */}
         <div className="btns row">
           {btns.map((item, index) => (
             <a
