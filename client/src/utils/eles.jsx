@@ -64,7 +64,7 @@ const baseRewards = {
     text: 'مشروع نهائي',
   },
   business: {
-    img: '/icons/business-icon.png',
+    img: '/icons/businessIcon.png',
     text: 'حصص ريادة اعمال',
   },
   freelance: {
