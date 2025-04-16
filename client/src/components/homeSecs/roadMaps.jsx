@@ -48,46 +48,31 @@ const Header = () => {
 };
 
 const ActiveSection = ({ selectedGrade }) => {
-  const { age } = selectedGrade;
+  const { grade, age, images, plans } = selectedGrade;
   const isMobile = window.innerWidth <= 768;
-  const [animationClass, setAnimationClass] = useState('');
-  const [currentGrade, setCurrentGrade] = useState(selectedGrade);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
-    if (selectedGrade.grade !== currentGrade.grade) {
-      setAnimationClass('fade-out');
-      setTimeout(() => {
-        setCurrentGrade(selectedGrade);
-      }, 300);
-    }
-  }, [selectedGrade, currentGrade]);
-
-  const handleImageLoad = () => {
-    setAnimationClass('fade-in');
-  };
+    setImageLoaded(false);
+  }, [grade]);
 
   return (
-    <div className={`active-sec ${animationClass}`}>
+    <div className="active-sec">
       <div>
         <img
-          src={
-            isMobile ? currentGrade.images.mobile : currentGrade.images.laptop
-          }
-          alt={currentGrade.grade}
+          src={isMobile ? images.mobile : images.laptop}
+          alt={grade}
           className="img-course"
-          onLoad={handleImageLoad}
           loading="lazy"
+          onLoad={() => setImageLoaded(true)}
         />
       </div>
       <div className="plans">
         <h2>خطط الاسعار</h2>
         <div className="plans-container">
           <div className="pricing-plans">
-            {currentGrade.plans.map((plan) => (
-              <PlanCard
-                key={plan.info.id}
-                plan={{ ...plan, age, grade: currentGrade.grade }}
-              />
+            {plans.map((plan) => (
+              <PlanCard key={plan.info.id} plan={{ ...plan, age, grade }} />
             ))}
           </div>
         </div>

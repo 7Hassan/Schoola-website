@@ -9,16 +9,14 @@ import { useEffect, useState } from 'react';
 const Hero = () => {
   const { t } = useTranslation();
   const heroContent = t('hero', { returnObjects: true });
-
   const [isMobile, setIsMobile] = useState(false);
-  console.log('🚀 ~ isMobile:', isMobile);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    handleResize(); // تحديد الحالة عند التحميل
+    handleResize();
     window.addEventListener('resize', handleResize);
 
     return () => window.removeEventListener('resize', handleResize);
