@@ -11,7 +11,7 @@ const Hero = () => {
   const heroContent = t('hero', { returnObjects: true });
 
   const [isMobile, setIsMobile] = useState(false);
-  console.log('🚀 ~ isMobile:', isMobile)
+  console.log('🚀 ~ isMobile:', isMobile);
 
   useEffect(() => {
     const handleResize = () => {
