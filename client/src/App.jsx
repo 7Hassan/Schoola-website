@@ -15,6 +15,7 @@ function App() {
 
   const images = [
     '/images/hero-img.png',
+    'https://i.imgur.com/19URYli.jpg',
     '/icons/s.png',
     '/icons/c.png',
     '/icons/h.png',
