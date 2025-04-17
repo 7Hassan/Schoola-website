@@ -74,8 +74,8 @@ const baseRewards = {
 };
 
 const monthlyPrice = 700;
-const calculatedDiscount = 15;
-const offer = (100 - calculatedDiscount) / 100;
+const discount = 15;
+const offer = (100 - discount) / 100;
 
 const createPlan = ({
   id,
@@ -106,7 +106,7 @@ const createPlan = ({
     duration,
     priceInfo: {
       preOffer: preOffer || 0,
-      discount: discount !== null ? discount : calculatedDiscount,
+      discount: discount !== null ? discount : discount,
       price,
       perClassPrice,
     },
@@ -117,6 +117,7 @@ const beginner = createPlan({
   id: 'beginner',
   title: 'مبتدئ',
   sessions: 4,
+  discount: 0,
   months: 1,
   price: monthlyPrice * 1,
 });
@@ -125,6 +126,7 @@ const intermediate = createPlan({
   id: 'intermediate',
   type: 'best',
   title: 'متقدم',
+  discount: discount,
   sessions: 12,
   months: 3,
   price: monthlyPrice * 3 * offer,
@@ -137,6 +139,7 @@ const advanced = createPlan({
   title: 'محترف',
   text: 'المستوي المتقدم + ',
   sessions: 24,
+  discount: discount,
   months: 6,
   price: 3990,
   preOffer: monthlyPrice * 6,
