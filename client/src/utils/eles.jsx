@@ -129,7 +129,7 @@ const intermediate = createPlan({
   discount: discount,
   sessions: 12,
   months: 3,
-  price: monthlyPrice * 3 * offer,
+  price: 1790,
   preOffer: monthlyPrice * 3,
   extraRewards: [baseRewards.certificate, baseRewards.project],
 });
@@ -141,9 +141,8 @@ const advanced = createPlan({
   sessions: 24,
   discount: discount,
   months: 6,
-  price: 3990,
   preOffer: monthlyPrice * 6,
-  price: monthlyPrice * 6 * offer,
+  price: 3590,
   extraRewards: [
     baseRewards.certificate,
     baseRewards.project,
