@@ -73,6 +73,10 @@ const baseRewards = {
   },
 };
 
+const monthlyPrice = 700;
+const calculatedDiscount = 15;
+const offer = (100 - calculatedDiscount) / 100;
+
 const createPlan = ({
   id,
   title,
@@ -85,13 +89,7 @@ const createPlan = ({
   discount = null,
   extraRewards = [],
 }) => {
-  const finalPrice = price;
-  const calculatedDiscount =
-    preOffer && preOffer > price
-      ? Math.round(((preOffer - price) / preOffer) * 100)
-      : 0;
-
-  const perClassPrice = Math.floor(finalPrice / sessions);
+  const perClassPrice = Math.floor(price / sessions);
   const rewards = [...extraRewards];
   const duration = `${months} ${
     months === 1 ? 'شهر' : 'شهور'
@@ -109,7 +107,7 @@ const createPlan = ({
     priceInfo: {
       preOffer: preOffer || 0,
       discount: discount !== null ? discount : calculatedDiscount,
-      price: finalPrice,
+      price,
       perClassPrice,
     },
   };
@@ -120,7 +118,7 @@ const beginner = createPlan({
   title: 'مبتدئ',
   sessions: 4,
   months: 1,
-  price: 900,
+  price: monthlyPrice * 1,
 });
 
 const intermediate = createPlan({
@@ -129,8 +127,8 @@ const intermediate = createPlan({
   title: 'متقدم',
   sessions: 12,
   months: 3,
-  price: 2300,
-  preOffer: 2700,
+  price: monthlyPrice * 3 * offer,
+  preOffer: monthlyPrice * 3,
   extraRewards: [baseRewards.certificate, baseRewards.project],
 });
 
@@ -140,8 +138,9 @@ const advanced = createPlan({
   text: 'المستوي المتقدم + ',
   sessions: 24,
   months: 6,
-  price: 5000,
-  preOffer: 5400,
+  price: 3990,
+  preOffer: monthlyPrice * 6,
+  price: monthlyPrice * 6 * offer,
   extraRewards: [
     baseRewards.certificate,
     baseRewards.project,
