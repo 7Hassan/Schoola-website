@@ -73,83 +73,67 @@ const baseRewards = {
   },
 };
 
-const monthlyPrice = 700;
-const discount = 15;
-const offer = (100 - discount) / 100;
+function calculateDiscount(monthlyPrice, otherPrice) {
+  const totalMonthlyPrice = monthlyPrice * 3;
+  const discount = totalMonthlyPrice - otherPrice;
+  return Math.floor((discount / totalMonthlyPrice) * 100);
+}
 
-const createPlan = ({
-  id,
-  title,
-  text = '',
-  type = '',
-  sessions,
-  months,
-  price,
-  preOffer = null,
-  discount = null,
-  extraRewards = [],
-}) => {
-  const perClassPrice = Math.floor(price / sessions);
-  const rewards = [...extraRewards];
-  const duration = `${months} ${
-    months === 1 ? 'شهر' : 'شهور'
-  } - ${sessions} حصة لايف`;
-
-  return {
-    id,
-    text,
-    type,
-    title,
-    btnLik: '',
-    sessions,
-    rewards,
-    duration,
-    priceInfo: {
-      preOffer: preOffer || 0,
-      discount: discount !== null ? discount : discount,
-      price,
-      perClassPrice,
-    },
-  };
-};
-
-const beginner = createPlan({
+const beginner = {
   id: 'beginner',
   title: 'مبتدئ',
+  text: '',
+  type: '',
+  btnLik: '',
   sessions: 4,
-  discount: 0,
-  months: 1,
-  price: monthlyPrice * 1,
-});
+  rewards: [],
+  duration: '1 شهر - 4 حصة لايف',
+  priceInfo: {
+    preOffer: 0,
+    discount: 0,
+    price: 599,
+    perClassPrice: Math.floor(599 / 4),
+  },
+};
 
-const intermediate = createPlan({
+const intermediate = {
   id: 'intermediate',
-  type: 'best',
   title: 'متقدم',
-  discount: discount,
+  text: '',
+  type: 'best',
+  btnLik: '',
   sessions: 12,
-  months: 3,
-  price: 1790,
-  preOffer: monthlyPrice * 3,
-  extraRewards: [baseRewards.certificate, baseRewards.project],
-});
+  rewards: [baseRewards.certificate, baseRewards.project],
+  duration: '3 شهور - 12 حصة لايف',
+  priceInfo: {
+    price: 1590,
+    preOffer: beginner.priceInfo.price * 3,
+    discount: calculateDiscount(beginner.priceInfo.price, 1590),
+    perClassPrice: Math.floor(1590 / 12),
+  },
+};
 
-const advanced = createPlan({
+const advanced = {
   id: 'advanced',
   title: 'محترف',
   text: 'المستوي المتقدم + ',
+  type: '',
+  btnLik: '',
   sessions: 24,
-  discount: discount,
-  months: 6,
-  preOffer: monthlyPrice * 6,
-  price: 3590,
-  extraRewards: [
+  rewards: [
     baseRewards.certificate,
     baseRewards.project,
     baseRewards.business,
     baseRewards.freelance,
   ],
-});
+  duration: '6 شهور - 24 حصة لايف',
+  priceInfo: {
+    price: 3190,
+    preOffer: beginner.priceInfo.price * 6,
+    discount: calculateDiscount(beginner.priceInfo.price, 1590),
+    perClassPrice: Math.floor(3190 / 24),
+  },
+};
 
 export const grades = [
   {
