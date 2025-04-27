@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Skills } from '../../utils/eles';
+import { Skills } from '../../utils/components';
 import './skills.scss';
 
 export const SoftSkills = () => {

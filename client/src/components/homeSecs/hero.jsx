@@ -74,3 +74,4 @@ const Hero = () => {
 };
 
 export default Hero;
+//https://imgur.com/jjoLhfT

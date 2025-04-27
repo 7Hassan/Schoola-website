@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useState, useCallback, useEffect } from 'react';
 import PlanCard from './plan';
 import './roadMaps.scss';
-import { grades } from '../../utils/eles';
+import { grades } from '../../utils/data';
 
 const Switcher = ({ selectedGrade, setSelectedGrade }) => {
   const handleGradeChange = useCallback(
@@ -64,7 +64,6 @@ const ActiveSection = ({ selectedGrade }) => {
           alt={grade}
           className="img-course"
           loading="lazy"
-          onLoad={() => setImageLoaded(true)}
         />
       </div>
       <div className="plans">
