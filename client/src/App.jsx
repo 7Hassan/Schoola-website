@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/home';
 import SplashScreen from './components/splash_screen/splash';
@@ -8,22 +7,22 @@ import './global.scss';
 
 import { PreLoading } from './utils/components';
 
+const images = [
+  'images/hero-img.webp',
+  'images/hero-text.webp',
+  '/icons/chars/s.webp',
+  '/icons/chars/c.webp',
+  '/icons/chars/h.webp',
+  '/icons/chars/o.webp',
+  '/icons/chars/o.webp',
+  '/icons/chars/l.webp',
+  '/icons/chars/a.webp',
+];
+
 function App() {
   const [loading, setLoading] = useState(true);
   const [splash, setSplash] = useState(true);
   const [imagesLoaded, setImagesLoaded] = useState(false);
-
-  const images = [
-    '/images/hero-img.png',
-    'https://i.imgur.com/b9J0Pd3.jpg',
-    '/icons/s.png',
-    '/icons/c.png',
-    '/icons/h.png',
-    '/icons/o.png',
-    '/icons/o.png',
-    '/icons/l.png',
-    '/icons/a.png',
-  ];
 
   const checkImagesLoaded = () => {
     const promises = images.map(
@@ -32,11 +31,11 @@ function App() {
           const img = new Image();
           img.src = src;
           img.onload = () => resolve();
-          img.onerror = () => reject();
+          img.onerror = () => reject(new Error(`Image failed to load: ${src}`));
         })
     );
 
-    const timeout = new Promise((resolve) => setTimeout(() => resolve(), 3000));
+    const timeout = new Promise((resolve) => setTimeout(resolve, 3000));
 
     return Promise.race([
       Promise.all(promises).then(() => setImagesLoaded(true)),
@@ -53,27 +52,22 @@ function App() {
       if (visitedBefore) {
         setSplash(false);
       } else {
-        const timer = setTimeout(
-          () => {
-            setSplash(false);
+        const timer = setTimeout(() => {
+          setSplash(false);
+          Cookies.set('visitedBefore', 'true', { expires: 30 });
+        }, 3500);
 
-            Cookies.set('visitedBefore', 'true', {
-              expires: 30,
-            });
-          },
-
-          3500
-        );
+        // Cleanup timeout when the component is unmounted
         return () => clearTimeout(timer);
       }
     };
 
     loadSplash();
-  }, []);
+  }, []); // [] ensures the effect runs once when the component mounts
 
   useEffect(() => {
     setLoading(false);
-  }, []);
+  }, []); // This will run only once when the component mounts
 
   if (loading || !imagesLoaded) {
     return <PreLoading />;
@@ -85,11 +79,9 @@ function App() {
 
   return (
     <Router>
-      {' '}
       <Routes>
-        {' '}
-        <Route path="/" element={<Home />} />{' '}
-      </Routes>{' '}
+        <Route path="/" element={<Home />} />
+      </Routes>
     </Router>
   );
 }

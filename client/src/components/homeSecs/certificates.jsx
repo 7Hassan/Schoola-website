@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { convertToDirectLink } from '../../utils/eles';
+import useDeviceType, { convertToDirectLink } from '../../utils/eles';
 import './certificates.scss';
 
 const Text = () => {
@@ -14,17 +14,7 @@ const Text = () => {
 };
 
 const Certificates = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    return () => window.removeEventListener('resize', checkScreenSize);
-  }, []);
+  const isMobile = useDeviceType();
 
   return (
     <div className="certificates sec header-sec" id="certificates">
@@ -36,8 +26,8 @@ const Certificates = () => {
         <img
           src={
             isMobile
-              ? 'https://i.imgur.com/FflJBiM.jpg'
-              : 'https://i.imgur.com/fmvyyHl.jpg'
+              ? '/images/certificate.webp'
+              : '/images/certificate-lap.webp'
           }
           alt="شهادة سكولة"
         />

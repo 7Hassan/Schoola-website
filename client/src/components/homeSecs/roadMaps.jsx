@@ -3,6 +3,7 @@ import { useState, useCallback, useEffect } from 'react';
 import PlanCard from './plan';
 import './roadMaps.scss';
 import { grades } from '../../utils/data';
+import useDeviceType from '../../utils/eles';
 
 const Switcher = ({ selectedGrade, setSelectedGrade }) => {
   const handleGradeChange = useCallback(
@@ -49,22 +50,13 @@ const Header = () => {
 
 const ActiveSection = ({ selectedGrade }) => {
   const { grade, age, images, plans } = selectedGrade;
-  const isMobile = window.innerWidth <= 768;
-  const [imageLoaded, setImageLoaded] = useState(false);
-
-  useEffect(() => {
-    setImageLoaded(false);
-  }, [grade]);
+  const isMobile = useDeviceType();
+  const imageSrc = isMobile ? images.mobile : images.laptop;
 
   return (
     <div className="active-sec">
       <div>
-        <img
-          src={isMobile ? images.mobile : images.laptop}
-          alt={grade}
-          className="img-course"
-          loading="lazy"
-        />
+        <img src={imageSrc} alt={grade} className="img-course" />
       </div>
       <div className="plans">
         <h2>خطط الاسعار</h2>

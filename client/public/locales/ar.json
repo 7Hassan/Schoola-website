@@ -57,35 +57,35 @@
     "icons": [
       {
         "text": "ريادة الأعمال",
-        "imgLink": "/images/business.png"
+        "imgLink": "/icons/businessIcon.png"
       },
       {
         "text": "العمل الحر",
-        "imgLink": "/images/freelance.png"
+        "imgLink": "/icons/skills/freelance.png"
       },
       {
         "text": "التفكير الإبداعي",
-        "imgLink": "/images/idea.png"
+        "imgLink": "/icons/skills/idea.png"
       },
       {
         "text": "الثقة بالنفس",
-        "imgLink": "/images/confidence.png"
+        "imgLink": "/icons/skills/confidence.png"
       },
       {
         "text": "مهارات التواصل",
-        "imgLink": "/images/communication.png"
+        "imgLink": "/icons/skills/communication.png"
       },
       {
         "text": "حل و إدارة المشكلات",
-        "imgLink": "/images/problem.png"
+        "imgLink": "/icons/skills/problem.png"
       },
       {
         "text": "العمل الجماعي",
-        "imgLink": "/images/team.png"
+        "imgLink": "/icons/skills/team.png"
       },
       {
         "text": "مهارات العرض",
-        "imgLink": "/images/presentation.png"
+        "imgLink": "/icons/skills/presentation.png"
       }
     ]
   },
@@ -98,35 +98,35 @@
     "icons": [
       {
         "text": "الذكاء الإصطناعي",
-        "imgLink": "/images/ai.png"
+        "imgLink": "/icons/skills/ai.png"
       },
       {
         "text": "تصميم المواقع والتطبيقات",
-        "imgLink": "/images/design.png"
+        "imgLink": "/icons/skills/design.png"
       },
       {
         "text": "برمجة المواقع",
-        "imgLink": "/images/web.png"
+        "imgLink": "/icons/skills/web.png"
       },
       {
         "text": "برمجة تطبيقات الهاتف المحمول",
-        "imgLink": "/images/mobile.png"
+        "imgLink": "/icons/skills/mobile.png"
       },
       {
         "text": "انترنت الأشياء",
-        "imgLink": "/images/iot.png"
+        "imgLink": "/icons/skills/iot.png"
       },
       {
         "text": "تصميم وبرمجة الألعاب",
-        "imgLink": "/images/games.png"
+        "imgLink": "/icons/skills/games.png"
       },
       {
         "text": "بناء و برمجة الروبوتات",
-        "imgLink": "/images/robotics.png"
+        "imgLink": "/icons/skills/robotics.png"
       },
       {
         "text": "بايثون وعلوم البيانات",
-        "imgLink": "/images/data.png"
+        "imgLink": "/icons/skills/data.png"
       }
     ]
   },

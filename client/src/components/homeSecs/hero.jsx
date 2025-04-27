@@ -1,36 +1,19 @@
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './hero.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import { whatsAppLink } from '../../utils/eles';
-import { useEffect, useState } from 'react';
+import useDeviceType, { whatsAppLink } from '../../utils/eles';
 
 const Hero = () => {
   const { t } = useTranslation();
   const heroContent = t('hero', { returnObjects: true });
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const isMobile = useDeviceType();
 
   return (
     <div id="hero" className="hero">
       <div className="text">
         <img
-          src={
-            isMobile
-              ? 'https://i.imgur.com/b9J0Pd3.jpg'
-              : 'https://i.imgur.com/eOhaVyO.jpg'
-          }
+          src={isMobile ? 'images/hero-text.webp' : 'images/hero-text-lap.webp'}
           alt=""
           className="hero-text-img"
         />
@@ -60,11 +43,7 @@ const Hero = () => {
       </div>
       <div className="hero-img">
         <img
-          src={
-            isMobile
-              ? '/images/hero-img.png'
-              : 'https://i.imgur.com/zw0pU6l.jpg'
-          }
+          src={isMobile ? 'images/hero-img.webp' : 'images/hero-img-lap.webp'}
           alt=""
           className="heroImg"
         />
@@ -74,4 +53,3 @@ const Hero = () => {
 };
 
 export default Hero;
-//https://imgur.com/jjoLhfT

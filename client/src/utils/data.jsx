@@ -122,11 +122,10 @@ const baseRewards = {
     text: 'حصص ريادة اعمال',
   },
   freelance: {
-    img: '/images/freelance.png',
+    img: '/icons/skills/freelance.png',
     text: 'حصص العمل الحر',
   },
 };
-
 
 const beginner = {
   id: 'beginner',
@@ -190,8 +189,8 @@ export const grades = [
     grade: '1-2',
     age: '7-8',
     images: {
-      mobile: 'https://i.imgur.com/19URYli.jpg',
-      laptop: 'https://i.imgur.com/hrCrHqf.jpg',
+      mobile: '/images/mobile/1-2.webp',
+      laptop: '/images/laptop/1-2.webp',
     },
     plans: [
       {
@@ -236,8 +235,8 @@ export const grades = [
     grade: '3-4',
     age: '9-10',
     images: {
-      mobile: 'https://i.imgur.com/r9IiJZ0.jpg',
-      laptop: 'https://i.imgur.com/7FrarxL.jpg',
+      mobile: '/images/mobile/3-4.webp',
+      laptop: '/images/laptop/3-4.webp',
     },
 
     plans: [
@@ -284,8 +283,8 @@ export const grades = [
     grade: '5-6',
     age: '11-12',
     images: {
-      mobile: 'https://i.imgur.com/W539pUa.jpg',
-      laptop: 'https://i.imgur.com/ExyU0S2.jpg',
+      mobile: '/images/mobile/5-6.webp',
+      laptop: '/images/laptop/5-6.webp',
     },
     plans: [
       {
@@ -330,8 +329,8 @@ export const grades = [
     grade: '7-8',
     age: '13-14',
     images: {
-      mobile: 'https://i.imgur.com/SCWcsjs.jpg',
-      laptop: 'https://i.imgur.com/idopqmp.jpg',
+      mobile: '/images/mobile/7-8.webp',
+      laptop: '/images/laptop/7-8.webp',
     },
 
     plans: [
@@ -376,9 +375,8 @@ export const grades = [
     grade: '9-10',
     age: '15-16',
     images: {
-      mobile: 'https://i.imgur.com/K1PjxhW.jpg',
-
-      laptop: 'https://i.imgur.com/RcKk8RO.jpg',
+      mobile: '/images/mobile/9-10.webp',
+      laptop: '/images/laptop/9-10.webp',
     },
     plans: [
       {
@@ -422,8 +420,8 @@ export const grades = [
     grade: '11-12',
     age: '17-18',
     images: {
-      mobile: 'https://i.imgur.com/8bVSrGZ.jpg',
-      laptop: 'https://i.imgur.com/maKmN8A.jpg',
+      mobile: '/images/mobile/11-12.webp',
+      laptop: '/images/laptop/11-12.webp',
     },
     plans: [
       {
@@ -463,8 +461,6 @@ export const grades = [
     ],
   },
 ];
-
-
 
 export const reviews = [
   {
