@@ -1,35 +1,12 @@
 import { useTranslation } from 'react-i18next';
-import { useState, useCallback, useEffect } from 'react';
+import { useState } from 'react';
 import PlanCard from './plan';
 import './roadMaps.scss';
 import { grades } from '../../utils/data';
 import useDeviceType from '../../utils/eles';
-import { Image } from 'antd';
+import { Tabs } from 'antd';
+import { Spin } from 'antd';
 
-const Switcher = ({ selectedGrade, setSelectedGrade }) => {
-  const handleGradeChange = useCallback(
-    (newGrade) => {
-      if (newGrade.grade !== selectedGrade.grade) {
-        setSelectedGrade(newGrade);
-      }
-    },
-    [selectedGrade, setSelectedGrade]
-  );
-
-  return (
-    <div className="switcher row">
-      {grades.map((item, index) => (
-        <button
-          key={index}
-          className={selectedGrade.grade === item.grade ? 'active' : ''}
-          onClick={() => handleGradeChange(item)}
-        >
-          <span>{item.text}</span> {item.grade}
-        </button>
-      ))}
-    </div>
-  );
-};
 
 const Header = () => {
   const { t } = useTranslation();
@@ -49,28 +26,45 @@ const Header = () => {
   );
 };
 
+const ImageWithBlurLoader = ({ imagesSrc, width = '90%' }) => {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <div className="image-loader-wrapper">
+      {!loaded && (
+        <>
+          <img
+            src={imagesSrc.blur}
+            alt="blur"
+            className="image blur-image"
+            style={{ width }}
+          />
+          <div className="loader-overlay">
+            <Spin size="large" />
+          </div>
+        </>
+      )}
+      <img
+        src={imagesSrc.main}
+        alt="main"
+        onLoad={() => setLoaded(true)}
+        className={`image main-image ${loaded ? 'show' : ''}`}
+        style={{ width }}
+      />
+    </div>
+  );
+};
+
 const ActiveSection = ({ selectedGrade }) => {
   const { grade, age, images, plans } = selectedGrade;
-  console.log('🚀 ~ images:', images);
   const isMobile = useDeviceType();
-  const imageSrc = isMobile
+  const imagesSrc = isMobile
     ? { main: images.mobile, blur: images.mobileBlurred }
     : { main: images.laptop, blur: images.laptopBlurred };
-  console.log('🚀 ~ imageSrc:', imageSrc);
 
   return (
     <div className="active-sec">
-      <div>
-        <Image
-          width="90%"
-          preview={false}
-          src={imageSrc.main}
-          placeholder={
-            <Image preview={false} src={imageSrc.blur} width="90%" />
-          }
-        />
-        {/* <img src={imageSrc.blur} alt={grade} className="img-course" /> */}
-      </div>
+      <ImageWithBlurLoader imagesSrc={imagesSrc} />
       <div className="plans">
         <h2>خطط الاسعار</h2>
         <div className="plans-container">
@@ -85,17 +79,36 @@ const ActiveSection = ({ selectedGrade }) => {
   );
 };
 
-const RoadMaps = () => {
-  const [selectedGrade, setSelectedGrade] = useState(grades[0]);
+const TabsEle = ({ grades }) => {
+  const [activeKey, setActiveKey] = useState('0');
+  const selectedGrade = grades[parseInt(activeKey)];
+  const items = grades.map((gd, index) => ({
+    label: (
+      <div className="label">
+        <span> صف </span>
+        {gd.grade}
+      </div>
+    ),
+    key: index.toString(),
+    children: <ActiveSection selectedGrade={selectedGrade} />,
+  }));
 
+  return (
+    <>
+      <Tabs
+        activeKey={activeKey}
+        onChange={(key) => setActiveKey(key)}
+        items={items}
+      />
+    </>
+  );
+};
+
+const RoadMaps = () => {
   return (
     <div id="courses" className="road-maps sec header-sec">
       <Header />
-      <Switcher
-        selectedGrade={selectedGrade}
-        setSelectedGrade={setSelectedGrade}
-      />
-      <ActiveSection selectedGrade={selectedGrade} />
+      <TabsEle grades={grades} />
     </div>
   );
 };
