@@ -191,6 +191,8 @@ export const grades = [
     images: {
       mobile: '/images/mobile/1-2.webp',
       laptop: '/images/laptop/1-2.webp',
+      mobileBlurred: '/images/mobile-blurred/1-2.webp',
+      laptopBlurred: '/images/laptop-blurred/1-2.webp',
     },
     plans: [
       {
@@ -237,6 +239,8 @@ export const grades = [
     images: {
       mobile: '/images/mobile/3-4.webp',
       laptop: '/images/laptop/3-4.webp',
+      mobileBlurred: '/images/mobile-blurred/3-4.webp',
+      laptopBlurred: '/images/laptop-blurred/3-4.webp',
     },
 
     plans: [
@@ -285,6 +289,8 @@ export const grades = [
     images: {
       mobile: '/images/mobile/5-6.webp',
       laptop: '/images/laptop/5-6.webp',
+      mobileBlurred: '/images/mobile-blurred/5-6.webp',
+      laptopBlurred: '/images/laptop-blurred/5-6.webp',
     },
     plans: [
       {
@@ -331,6 +337,8 @@ export const grades = [
     images: {
       mobile: '/images/mobile/7-8.webp',
       laptop: '/images/laptop/7-8.webp',
+      mobileBlurred: '/images/mobile-blurred/7-8.webp',
+      laptopBlurred: '/images/laptop-blurred/7-8.webp',
     },
 
     plans: [
@@ -377,6 +385,8 @@ export const grades = [
     images: {
       mobile: '/images/mobile/9-10.webp',
       laptop: '/images/laptop/9-10.webp',
+      mobileBlurred: '/images/mobile-blurred/9-10.webp',
+      laptopBlurred: '/images/laptop-blurred/9-10.webp',
     },
     plans: [
       {
@@ -422,6 +432,8 @@ export const grades = [
     images: {
       mobile: '/images/mobile/11-12.webp',
       laptop: '/images/laptop/11-12.webp',
+      mobileBlurred: '/images/mobile-blurred/11-12.webp',
+      laptopBlurred: '/images/laptop-blurred/11-12.webp',
     },
     plans: [
       {

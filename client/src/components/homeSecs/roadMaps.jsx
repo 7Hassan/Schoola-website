@@ -4,6 +4,7 @@ import PlanCard from './plan';
 import './roadMaps.scss';
 import { grades } from '../../utils/data';
 import useDeviceType from '../../utils/eles';
+import { Image } from 'antd';
 
 const Switcher = ({ selectedGrade, setSelectedGrade }) => {
   const handleGradeChange = useCallback(
@@ -50,13 +51,25 @@ const Header = () => {
 
 const ActiveSection = ({ selectedGrade }) => {
   const { grade, age, images, plans } = selectedGrade;
+  console.log('🚀 ~ images:', images);
   const isMobile = useDeviceType();
-  const imageSrc = isMobile ? images.mobile : images.laptop;
+  const imageSrc = isMobile
+    ? { main: images.mobile, blur: images.mobileBlurred }
+    : { main: images.laptop, blur: images.laptopBlurred };
+  console.log('🚀 ~ imageSrc:', imageSrc);
 
   return (
     <div className="active-sec">
       <div>
-        <img src={imageSrc} alt={grade} className="img-course" />
+        <Image
+          width="90%"
+          preview={false}
+          src={imageSrc.main}
+          placeholder={
+            <Image preview={false} src={imageSrc.blur} width="90%" />
+          }
+        />
+        {/* <img src={imageSrc.blur} alt={grade} className="img-course" /> */}
       </div>
       <div className="plans">
         <h2>خطط الاسعار</h2>

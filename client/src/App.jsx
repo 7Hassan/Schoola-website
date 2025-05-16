@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/home';
 import SplashScreen from './components/splash_screen/splash';
 import Cookies from 'js-cookie';
+import Home from './pages/home';
+import "antd/dist/reset.css";
+
 import './global.scss';
 
 import { PreLoading } from './utils/components';
+import Dashboard from './pages/dashboard';
 
 const images = [
   'images/hero-img.webp',
@@ -56,18 +59,16 @@ function App() {
           setSplash(false);
           Cookies.set('visitedBefore', 'true', { expires: 30 });
         }, 3500);
-
-        // Cleanup timeout when the component is unmounted
         return () => clearTimeout(timer);
       }
     };
 
     loadSplash();
-  }, []); // [] ensures the effect runs once when the component mounts
+  }, []);
 
   useEffect(() => {
     setLoading(false);
-  }, []); // This will run only once when the component mounts
+  }, []);
 
   if (loading || !imagesLoaded) {
     return <PreLoading />;
@@ -81,6 +82,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
       </Routes>
     </Router>
   );

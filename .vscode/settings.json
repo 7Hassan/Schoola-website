@@ -1,0 +1,23 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "client/src/firebase.js": true,
+    "client/*.*": true,
+    "client/src/main.jsx": true,
+    "client/src/firebase.jsx": true,
+    "server": true,
+    "**/README.md": true,
+    "**/.gitignore": true,
+    ".gitignore": true,
+    "**/LICENSE": true,
+    "Schoola-website": true,
+    "**/schoolaDB.dmm": true,
+    "schoolaDB.dmm": true
+  },
+  "explorerExclude.backup": {}
+}

@@ -15,9 +15,12 @@
     "@fortawesome/fontawesome-svg-core": "^6.7.1",
     "@fortawesome/free-solid-svg-icons": "^6.7.1",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@mui/icons-material": "^6.2.1",
-    "@mui/material": "^6.2.1",
-    "@mui/styled-engine-sc": "^6.2.1",
+    "@mui/icons-material": "^6.4.11",
+    "@mui/joy": "^5.0.0-beta.52",
+    "@mui/material": "^6.4.11",
+    "@mui/styled-engine-sc": "^6.4.9",
+    "@tailwindcss/vite": "^4.1.7",
+    "antd": "^5.25.1",
     "axios": "^1.8.4",
     "canvas-confetti": "^1.9.3",
     "firebase": "^11.5.0",
@@ -36,7 +39,7 @@
     "react-router-hash-link": "^2.4.3",
     "sass": "^1.69.5",
     "scss": "^0.2.4",
-    "styled-components": "^6.1.13",
+    "styled-components": "^6.1.18",
     "swiper": "^11.2.6"
   },
   "devDependencies": {
@@ -44,11 +47,14 @@
     "@types/react": "^18.3.10",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.2",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9.11.1",
     "eslint-plugin-react": "^7.37.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.12",
     "globals": "^15.9.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.7",
     "vite": "^5.4.8"
   }
 }
