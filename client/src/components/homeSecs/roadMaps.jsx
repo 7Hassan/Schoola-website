@@ -7,7 +7,6 @@ import useDeviceType from '../../utils/eles';
 import { Tabs } from 'antd';
 import { Spin } from 'antd';
 
-
 const Header = () => {
   const { t } = useTranslation();
   const header = t('courses.header', { returnObjects: true });
@@ -26,7 +25,7 @@ const Header = () => {
   );
 };
 
-const ImageWithBlurLoader = ({ imagesSrc, width = '90%' }) => {
+const ImageWithBlurLoader = ({ imagesSrc, width = '90%', isMobile }) => {
   const [loaded, setLoaded] = useState(false);
 
   return (
@@ -58,13 +57,11 @@ const ImageWithBlurLoader = ({ imagesSrc, width = '90%' }) => {
 const ActiveSection = ({ selectedGrade }) => {
   const { grade, age, images, plans } = selectedGrade;
   const isMobile = useDeviceType();
-  const imagesSrc = isMobile
-    ? { main: images.mobile, blur: images.mobileBlurred }
-    : { main: images.laptop, blur: images.laptopBlurred };
+  const imagesSrc = isMobile ? images.mobile : images.laptop;
 
   return (
     <div className="active-sec">
-      <ImageWithBlurLoader imagesSrc={imagesSrc} />
+      <ImageWithBlurLoader imagesSrc={imagesSrc} isMobile={isMobile} />
       <div className="plans">
         <h2>خطط الاسعار</h2>
         <div className="plans-container">

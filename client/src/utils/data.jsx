@@ -189,10 +189,14 @@ export const grades = [
     grade: '1-2',
     age: '7-8',
     images: {
-      mobile: '/images/mobile/1-2.webp',
-      laptop: '/images/laptop/1-2.webp',
-      mobileBlurred: '/images/mobile-blurred/1-2.webp',
-      laptopBlurred: '/images/laptop-blurred/1-2.webp',
+      mobile: {
+        main: '/images/mobile/1-2.webp',
+        blur: '/images/mobile-blurred/1-2.webp',
+      },
+      laptop: {
+        main: '/images/laptop/1-2.webp',
+        blur: '/images/laptop-blurred/1-2.webp',
+      },
     },
     plans: [
       {
@@ -237,12 +241,15 @@ export const grades = [
     grade: '3-4',
     age: '9-10',
     images: {
-      mobile: '/images/mobile/3-4.webp',
-      laptop: '/images/laptop/3-4.webp',
-      mobileBlurred: '/images/mobile-blurred/3-4.webp',
-      laptopBlurred: '/images/laptop-blurred/3-4.webp',
+      mobile: {
+        main: '/images/mobile/3-4.webp',
+        blur: '/images/mobile-blurred/3-4.webp',
+      },
+      laptop: {
+        main: '/images/laptop/3-4.webp',
+        blur: '/images/laptop-blurred/3-4.webp',
+      },
     },
-
     plans: [
       {
         info: { ...beginner },
@@ -287,10 +294,14 @@ export const grades = [
     grade: '5-6',
     age: '11-12',
     images: {
-      mobile: '/images/mobile/5-6.webp',
-      laptop: '/images/laptop/5-6.webp',
-      mobileBlurred: '/images/mobile-blurred/5-6.webp',
-      laptopBlurred: '/images/laptop-blurred/5-6.webp',
+      mobile: {
+        main: '/images/mobile/5-6.webp',
+        blur: '/images/mobile-blurred/5-6.webp',
+      },
+      laptop: {
+        main: '/images/laptop/5-6.webp',
+        blur: '/images/laptop-blurred/5-6.webp',
+      },
     },
     plans: [
       {
@@ -335,12 +346,15 @@ export const grades = [
     grade: '7-8',
     age: '13-14',
     images: {
-      mobile: '/images/mobile/7-8.webp',
-      laptop: '/images/laptop/7-8.webp',
-      mobileBlurred: '/images/mobile-blurred/7-8.webp',
-      laptopBlurred: '/images/laptop-blurred/7-8.webp',
+      mobile: {
+        main: '/images/mobile/7-8.webp',
+        blur: '/images/mobile-blurred/7-8.webp',
+      },
+      laptop: {
+        main: '/images/laptop/7-8.webp',
+        blur: '/images/laptop-blurred/7-8.webp',
+      },
     },
-
     plans: [
       {
         info: { ...beginner },
@@ -383,10 +397,14 @@ export const grades = [
     grade: '9-10',
     age: '15-16',
     images: {
-      mobile: '/images/mobile/9-10.webp',
-      laptop: '/images/laptop/9-10.webp',
-      mobileBlurred: '/images/mobile-blurred/9-10.webp',
-      laptopBlurred: '/images/laptop-blurred/9-10.webp',
+      mobile: {
+        main: '/images/mobile/9-10.webp',
+        blur: '/images/mobile-blurred/9-10.webp',
+      },
+      laptop: {
+        main: '/images/laptop/9-10.webp',
+        blur: '/images/laptop-blurred/9-10.webp',
+      },
     },
     plans: [
       {
@@ -430,10 +448,14 @@ export const grades = [
     grade: '11-12',
     age: '17-18',
     images: {
-      mobile: '/images/mobile/11-12.webp',
-      laptop: '/images/laptop/11-12.webp',
-      mobileBlurred: '/images/mobile-blurred/11-12.webp',
-      laptopBlurred: '/images/laptop-blurred/11-12.webp',
+      mobile: {
+        main: '/images/mobile/11-12.webp',
+        blur: '/images/mobile-blurred/11-12.webp',
+      },
+      laptop: {
+        main: '/images/laptop/11-12.webp',
+        blur: '/images/laptop-blurred/11-12.webp',
+      },
     },
     plans: [
       {
