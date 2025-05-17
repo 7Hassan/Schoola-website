@@ -13,30 +13,9 @@ export const whatsAppLink = (message) => {
   return `https://wa.me/${number}?text=${encodedMessage}`;
 };
 
-const ImageWithBlurLoader = ({ imagesSrc }) => {
-  const [loaded, setLoaded] = useState(false);
 
-  return (
-    <div className="image-loader-wrapper">
-      {!loaded && (
-        <>
-          <img src={imagesSrc.blur} alt="blur" className="image blur-image" />
-          <div className="loader-overlay">
-            <Spin size="large" />
-          </div>
-        </>
-      )}
-      <img
-        src={imagesSrc.main}
-        alt="main"
-        onLoad={() => setLoaded(true)}
-        className={`image main-image ${loaded ? 'show' : ''}`}
-      />
-    </div>
-  );
-};
 
-export const ImageLoader = ({ src = '/images/image-tmp.png' }) => {
+export const ImageLoader = ({ src = '/images/image-tmp.webp' }) => {
   return (
     <>
       <img
