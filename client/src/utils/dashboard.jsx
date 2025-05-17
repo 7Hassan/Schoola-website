@@ -6,6 +6,14 @@ import CircularProgress from '@mui/joy/CircularProgress';
 import LinearProgress from '@mui/joy/LinearProgress';
 import { Image, Space, Tabs, Rate } from 'antd';
 
+// {
+//   "question": "هل البرمجة مناسبة لأي طفل؟",
+//   "answer": "لا، البرمجة مش مناسبة لكل الأطفال. من خلال رحلتنا وتعاملنا مع أطفال، عرفنا إن <span>كل طفل ليه شخصية مختلفة</span>. وهدفنا الأساسي إننا نساعد الطفل يطور ويحسن تفكيره ونظرته للحياة ونكون <span>البوصلة اللي بتوجّهه للطريق المناسب ليه</span>. عشان كده مش كل <span>مجالات البرمجة</span> مناسبة لكل الأطفال. لذلك، <span>قسمنا المناهج على مجالات مختلفة</span>، لأن البرمجة مش شيء واحد، بل مجالات متعددة. مثلاً، عندنا <span>تراك مخصص للأطفال اللي بيحبوا التصميم فقط</span>، لأن لاحظنا إن فيه أطفال شخصيتهم مناسبة للمجال ده. اللي يهمنا هو إن الطفل يطور نفسه فعلاً، يكتشف شخصيته، ويطور مهاراته معانا."
+// },
+
+
+
+
 export const imageTemp = '/icons/businessIcon.png';
 
 export const AvatarsGroup = () => {
@@ -85,3 +93,4 @@ export const TapsEle = () => (
 );
 
 export const RateEle = () => <Rate defaultValue={3} allowClear={false} />;
+

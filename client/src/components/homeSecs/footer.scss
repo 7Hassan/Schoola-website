@@ -52,6 +52,7 @@
         justify-content: center;
         gap: 10px;
         flex-wrap: nowrap;
+        list-style: disc;
 
         li {
           &::marker {

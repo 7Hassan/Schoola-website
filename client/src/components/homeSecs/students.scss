@@ -1,5 +1,6 @@
 @use '../../global'as *;
-@import './../../utils/mixins.scss';
+@use './../../utils/mixins'as *;
+
 
 
 .circle {
@@ -148,6 +149,7 @@
   .student-section {
     width: 100%;
     @include infinite-loop($width: 200px, $height: 350px, $time:200s);
+
     .row-bar {
       width: 90% !important;
 
