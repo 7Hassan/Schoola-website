@@ -94,33 +94,7 @@
     }
   }
 
-  .image-loader-wrapper {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    min-height: 230px;
 
-    .main-image {
-      position: absolute;
-      opacity: 0;
-
-      &.show {
-        position: relative;
-        opacity: 1;
-      }
-    }
-
-    .loader-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(2px);
-      z-index: 1;
-    }
-  }
 
   .active-sec {
     min-height: 150px;

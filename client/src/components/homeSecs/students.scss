@@ -83,6 +83,10 @@
       align-items: center;
       justify-content: center;
 
+      .image-loader-wrapper {
+        height: 100%;
+      }
+
 
       .img-student {
         height: 100%;
@@ -131,6 +135,7 @@
               font-size: 14px;
               color: white;
               white-space: nowrap;
+              font-weight: 600;
             }
 
           }
@@ -140,10 +145,6 @@
   }
 }
 
-
-@media (max-width: 1024px) {}
-
-@media (max-width: 991px) {}
 
 @media (max-width: 767px) {
   .student-section {

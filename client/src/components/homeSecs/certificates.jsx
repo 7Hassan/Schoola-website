@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
-import useDeviceType, { convertToDirectLink } from '../../utils/eles';
 import './certificates.scss';
+import { useMediaQuery } from 'react-responsive';
 
 const Text = () => {
   return (
@@ -14,7 +13,7 @@ const Text = () => {
 };
 
 const Certificates = () => {
-  const isMobile = useDeviceType();
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   return (
     <div className="certificates sec header-sec" id="certificates">

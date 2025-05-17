@@ -52,6 +52,29 @@ const Header = () => {
   );
 };
 
+const ImageWithBlurLoader = ({ imagesSrc }) => {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <div className="image-loader-wrapper">
+      {!loaded && (
+        <>
+          <img src={imagesSrc.blur} alt="blur" className="image blur-image" />
+          <div className="loader-overlay">
+            <Spin size="large" />
+          </div>
+        </>
+      )}
+      <img
+        src={imagesSrc.main}
+        alt="main"
+        onLoad={() => setLoaded(true)}
+        className={`image main-image ${loaded ? 'show' : ''}`}
+      />
+    </div>
+  );
+};
+
 const Gallery = ({ speed = 10 }) => {
   const [images, setImages] = useState([]);
 
@@ -68,15 +91,11 @@ const Gallery = ({ speed = 10 }) => {
         style={{ '--scroll-speed': `${speed}s` }}
       >
         <div className="gallery">
-          {images.length > 0 ? (
-            images.map((src, index) => (
-              <div key={index} className="image-container">
-                <img src={src} alt={`Gallery Image ${index}`} />
-              </div>
-            ))
-          ) : (
-            <p>جاري تحميل الصور...</p>
-          )}
+          {images.map((src, index) => (
+            <div key={`${index}`} className="image-container">
+              {/* <img src={src} alt={`Gallery Image ${index}`} /> */}
+            </div>
+          ))}
         </div>
       </div>
     </div>

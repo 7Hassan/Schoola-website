@@ -3,9 +3,10 @@ import { useState } from 'react';
 import PlanCard from './plan';
 import './roadMaps.scss';
 import { grades } from '../../utils/data';
-import useDeviceType from '../../utils/eles';
 import { Tabs } from 'antd';
 import { Spin } from 'antd';
+import { useMediaQuery } from 'react-responsive';
+import { ImageLoader } from '../../utils/eles';
 
 const Header = () => {
   const { t } = useTranslation();
@@ -25,30 +26,17 @@ const Header = () => {
   );
 };
 
-const ImageWithBlurLoader = ({ imagesSrc, width = '90%', isMobile }) => {
+const ImageWithBlurLoader = ({ imagesSrc }) => {
   const [loaded, setLoaded] = useState(false);
 
   return (
     <div className="image-loader-wrapper">
-      {!loaded && (
-        <>
-          <img
-            src={imagesSrc.blur}
-            alt="blur"
-            className="image blur-image"
-            style={{ width }}
-          />
-          <div className="loader-overlay">
-            <Spin size="large" />
-          </div>
-        </>
-      )}
+      {!loaded && <ImageLoader src={imagesSrc.blur} />}
       <img
         src={imagesSrc.main}
         alt="main"
         onLoad={() => setLoaded(true)}
         className={`image main-image ${loaded ? 'show' : ''}`}
-        style={{ width }}
       />
     </div>
   );
@@ -56,7 +44,7 @@ const ImageWithBlurLoader = ({ imagesSrc, width = '90%', isMobile }) => {
 
 const ActiveSection = ({ selectedGrade }) => {
   const { grade, age, images, plans } = selectedGrade;
-  const isMobile = useDeviceType();
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   const imagesSrc = isMobile ? images.mobile : images.laptop;
 
   return (

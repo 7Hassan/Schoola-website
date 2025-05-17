@@ -2,12 +2,12 @@ import { useTranslation } from 'react-i18next';
 import './hero.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import useDeviceType, { whatsAppLink } from '../../utils/eles';
-
+import { whatsAppLink } from '../../utils/eles';
+import { useMediaQuery } from 'react-responsive';
 const Hero = () => {
   const { t } = useTranslation();
   const heroContent = t('hero', { returnObjects: true });
-  const isMobile = useDeviceType();
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   return (
     <div id="hero" className="hero">
