@@ -4,7 +4,6 @@ import PlanCard from './plan';
 import './roadMaps.scss';
 import { grades } from '../../utils/data';
 import { Tabs } from 'antd';
-import { Spin } from 'antd';
 import { useMediaQuery } from 'react-responsive';
 import { ImageLoader } from '../../utils/eles';
 

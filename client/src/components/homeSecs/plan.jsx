@@ -1,40 +1,44 @@
 import './plan.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { whatsAppLink } from '../../utils/eles';
+import { Spin } from 'antd';
+import { LocationContext } from '../../context/user';
+import { getLocalizedPrices, priceType } from '../../utils/data';
 
-// مكون السعر
-const Price = ({ priceInfo }) => {
-  const { preOffer, price, perClassPrice, discount } = priceInfo;
+const Price = ({ type, country }) => {
+  const prices = getLocalizedPrices(country);
+  const priceInfo = priceType(type, prices);
+  const { preOffer, price, perClassPrice, discount, currency } = priceInfo;
 
   return (
     <div className="price-container">
       <div className="pricing-price">
         {preOffer > 0 && <span className="price_before">{preOffer}</span>}
-        <span className="price_currency"> ج.م </span>
+        <span className="price_currency"> {currency} </span>
         <span className="price">
           <strong className="bold-text-3">{price}</strong>
         </span>
       </div>
-
       <div className="paragraph-regular margin-bottom-20">
-        معدل <strong>{perClassPrice} ج.م</strong> لكل حصة
+        معدل{' '}
+        <strong>
+          {perClassPrice} {currency}
+        </strong>{' '}
+        لكل حصة
       </div>
-
       {<div className={`save ${!discount && 'hide'}`}>وفر {discount}%</div>}
     </div>
   );
 };
 
-// مكون العنوان
 const Title = ({ title }) => (
   <div className="title-container">
     <h2 className="pricing-title">{title}</h2>
   </div>
 );
 
-// مكون المميزات
 const Features = ({ rewards }) => {
   if (!rewards.length) return null;
 
@@ -60,7 +64,6 @@ const Features = ({ rewards }) => {
   );
 };
 
-// مكون تفاصيل البطاقة
 const CardDetails = ({ plan, drop, setDrop }) => {
   const { details, info, grade, age } = plan;
   const { duration, text, rewards } = info;
@@ -119,11 +122,11 @@ const Button = ({ age }) => {
   );
 };
 
-// مكون البطاقة بالكامل
 const PlanCard = ({ plan }) => {
   const [drop, setDrop] = useState(false);
   const { info } = plan;
   const isBest = info.type === 'best';
+  const { locationObj } = useContext(LocationContext);
 
   return (
     <div className={`pricing-card2 ${info.type}`}>
@@ -131,7 +134,10 @@ const PlanCard = ({ plan }) => {
 
       <div className={`pricing-card ${drop ? 'active' : ''}`}>
         <Title title={info.title} />
-        <Price priceInfo={info.priceInfo} />
+        <div className="price-container">
+          {locationObj.loading && <Spin size="medium" />}
+          <Price type={info.id} country={locationObj.locationData.country} />
+        </div>
         <Button age={plan.age} />
         <div className="pricing-divider" />
         <CardDetails plan={plan} drop={drop} setDrop={setDrop} />

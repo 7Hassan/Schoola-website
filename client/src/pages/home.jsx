@@ -1,4 +1,3 @@
-import React from 'react';
 import Header from '../components/header/header';
 import Hero from '../components/homeSecs/hero';
 import { SoftSkills, HardSkills } from '../components/homeSecs/skills';
@@ -13,6 +12,7 @@ import Certificates from '../components/homeSecs/certificates';
 import About from '../components/homeSecs/about';
 
 const Home = () => {
+
   return (
     <div>
       <Header />

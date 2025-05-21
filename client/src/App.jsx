@@ -26,6 +26,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [splash, setSplash] = useState(true);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  
 
   const checkImagesLoaded = () => {
     const promises = images.map(

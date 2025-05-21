@@ -1,5 +1,7 @@
 import { Spin } from 'antd';
 import { useRef, useState, useEffect } from 'react';
+import axios from 'axios';
+import { getLocalizedPrices } from './data';
 
 export const convertToDirectLink = (url) => {
   if (!url || url.includes('undefined')) return null;
@@ -12,8 +14,6 @@ export const whatsAppLink = (message) => {
   const number = '201558570124';
   return `https://wa.me/${number}?text=${encodedMessage}`;
 };
-
-
 
 export const ImageLoader = ({ src = '/images/image-tmp.webp' }) => {
   return (
@@ -66,3 +66,33 @@ export const LazyImage = ({ src, alt, className }) => {
     </div>
   );
 };
+
+
+
+
+export const useLocalizedPrices = () => {
+  const [country, setCountry] = useState(null);
+  const [prices, setPrices] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios
+      .get('https://ipapi.co/json/')
+      .then((response) => {
+        const userCountry = response.data.country_name;
+        setCountry(userCountry);
+        setPrices(getLocalizedPrices(userCountry));
+      })
+      .catch((error) => {
+        console.error('Error fetching location', error);
+        setCountry('Default');
+        setPrices(getLocalizedPrices('Default'));
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
+
+  return { country, prices, loading };
+};
+

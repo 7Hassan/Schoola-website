@@ -127,6 +127,54 @@ const baseRewards = {
   },
 };
 
+export const getLocalizedPrices = (country) => {
+  switch (country) {
+    case 'United Arab Emirates':
+      return {
+        beginner: 100,
+        intermediate: 200,
+        advanced: 400,
+        currency: 'AED',
+      };
+    default:
+      return {
+        beginner: 599,
+        intermediate: 1590,
+        advanced: 3190,
+        currency: 'ج.م',
+      };
+  }
+};
+export const priceType = (type, prices) => {
+  const { beginner, intermediate, advanced, currency } = prices;
+  switch (type) {
+    case 'beginner':
+      return {
+        price: beginner,
+        preOffer: 0,
+        discount: 0,
+        perClassPrice: Math.ceil(beginner / 4),
+        currency: currency,
+      };
+    case 'intermediate':
+      return {
+        price: intermediate,
+        preOffer: beginner * 3,
+        discount: 11,
+        perClassPrice: Math.ceil(intermediate / 12),
+        currency: currency,
+      };
+    case 'advanced':
+      return {
+        price: advanced,
+        preOffer: beginner * 6,
+        discount: 11,
+        perClassPrice: Math.ceil(advanced / 24),
+        currency: currency,
+      };
+  }
+};
+
 const beginner = {
   id: 'beginner',
   title: 'مبتدئ',
@@ -136,12 +184,6 @@ const beginner = {
   sessions: 4,
   rewards: [],
   duration: '1 شهر - 4 حصة لايف',
-  priceInfo: {
-    preOffer: 0,
-    discount: 0,
-    price: 599,
-    perClassPrice: Math.floor(599 / 4),
-  },
 };
 
 const intermediate = {
@@ -153,12 +195,6 @@ const intermediate = {
   sessions: 12,
   rewards: [baseRewards.certificate, baseRewards.project],
   duration: '3 شهور - 12 حصة لايف',
-  priceInfo: {
-    price: 1590,
-    preOffer: beginner.priceInfo.price * 3,
-    discount: 11,
-    perClassPrice: Math.floor(1590 / 12),
-  },
 };
 
 const advanced = {
@@ -175,12 +211,12 @@ const advanced = {
     baseRewards.freelance,
   ],
   duration: '6 شهور - 24 حصة لايف',
-  priceInfo: {
-    price: 3190,
-    preOffer: beginner.priceInfo.price * 6,
-    discount: 11,
-    perClassPrice: Math.floor(3190 / 24),
-  },
+  // priceInfo: {
+  //   price: 3190,
+  //   preOffer: beginner.priceInfo.price * 6,
+  //   discount: 11,
+  //   perClassPrice: Math.floor(3190 / 24),
+  // },
 };
 
 export const grades = [
