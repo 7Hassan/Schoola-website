@@ -129,6 +129,13 @@ const baseRewards = {
 
 export const getLocalizedPrices = (country) => {
   switch (country) {
+    case 'Egypt':
+      return {
+        beginner: 600,
+        intermediate: 1500,
+        advanced: 3000,
+        currency: 'ج.م',
+      };
     case 'United Arab Emirates':
       return {
         beginner: 100,
@@ -138,10 +145,10 @@ export const getLocalizedPrices = (country) => {
       };
     default:
       return {
-        beginner: 599,
-        intermediate: 1590,
-        advanced: 3190,
-        currency: 'ج.م',
+        beginner: 20,
+        intermediate: 50,
+        advanced: 100,
+        currency: '$',
       };
   }
 };
@@ -153,7 +160,7 @@ export const priceType = (type, prices) => {
         price: beginner,
         preOffer: 0,
         discount: 0,
-        perClassPrice: Math.ceil(beginner / 4),
+        perClassPrice: Math.floor(beginner / 4),
         currency: currency,
       };
     case 'intermediate':
@@ -161,7 +168,7 @@ export const priceType = (type, prices) => {
         price: intermediate,
         preOffer: beginner * 3,
         discount: 11,
-        perClassPrice: Math.ceil(intermediate / 12),
+        perClassPrice: Math.floor(intermediate / 12),
         currency: currency,
       };
     case 'advanced':
@@ -169,7 +176,7 @@ export const priceType = (type, prices) => {
         price: advanced,
         preOffer: beginner * 6,
         discount: 11,
-        perClassPrice: Math.ceil(advanced / 24),
+        perClassPrice: Math.floor(advanced / 24),
         currency: currency,
       };
   }

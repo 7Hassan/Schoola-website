@@ -9,11 +9,12 @@ export const CountryProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    
     axios
-      .get('https://ipapi.co/json/')
+      .get(
+        'https://apiip.net/api/check?accessKey=b5f272ca-cd6a-43ab-b718-0d3f435ab6f1'
+      )
       .then((response) => {
-        const userCountry = response.data.country_name;
+        const userCountry = response.data.countryName;
         setCountry(userCountry || 'Egypt');
       })
       .catch((error) => {

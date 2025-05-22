@@ -7,11 +7,11 @@ process.on('uncaughtException', (err) => {
   process.exit(1)
 })
 
-const DBLink = process.env.DATA_BASE_URL.replace('<PASSWORD>', process.env.DATA_BASE_PASSWORD)
-const port = process.env.PORT || 8000
-mongoose.set('strictQuery', false);
+// const DBLink = process.env.DATA_BASE_URL.replace('<PASSWORD>', process.env.DATA_BASE_PASSWORD)
+// const port = process.env.PORT || 8000
+// mongoose.set('strictQuery', false);
 
-mongoose.connect(DBLink).then(() => console.log('✅ connect with DataBase'))
+// mongoose.connect(DBLink).then(() => console.log('✅ connect with DataBase'))
 
 
 

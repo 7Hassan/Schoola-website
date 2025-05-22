@@ -1,8 +1,6 @@
 // LocationContext.js
 import React, { createContext, useState, useEffect } from 'react';
-
 export const LocationContext = createContext();
-
 const API_KEY = 'ba57eddf88d642c1a76dafe7ef68b6dd';
 
 export const LocationProvider = ({ children }) => {
@@ -14,14 +12,12 @@ export const LocationProvider = ({ children }) => {
 
   const getLocationInfo = async (latitude, longitude) => {
     try {
-
       const url = `https://api.opencagedata.com/geocode/v1/json?q=${latitude},${longitude}&key=${API_KEY}&language=en`;
       const response = await fetch(url);
       const data = await response.json();
 
       if (data.status.code === 200 && data.results.length > 0) {
         const components = data.results[0].components;
-        console.log('🚀 ~ components:', components)
         setLocationData({
           country: components.country || 'Egypt',
           city: components.city || '',

@@ -1,15 +1,16 @@
 import './plan.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
-import { useContext, useState } from 'react';
+import { useContext, useMemo, useState } from 'react';
 import { whatsAppLink } from '../../utils/eles';
 import { Spin } from 'antd';
-import { LocationContext } from '../../context/user';
+// import { LocationContext } from '../../context/user';
 import { getLocalizedPrices, priceType } from '../../utils/data';
+import { CountryContext } from '../../context/country';
 
 const Price = ({ type, country }) => {
-  const prices = getLocalizedPrices(country);
-  const priceInfo = priceType(type, prices);
+  const prices = useMemo(() => getLocalizedPrices(country), [country, type]);
+  const priceInfo = useMemo(() => priceType(type, prices), [type, prices]);
   const { preOffer, price, perClassPrice, discount, currency } = priceInfo;
 
   return (
@@ -126,7 +127,8 @@ const PlanCard = ({ plan }) => {
   const [drop, setDrop] = useState(false);
   const { info } = plan;
   const isBest = info.type === 'best';
-  const { locationObj } = useContext(LocationContext);
+  // const { locationObj } = useContext(LocationContext);
+  const { country, loading } = useContext(CountryContext);
 
   return (
     <div className={`pricing-card2 ${info.type}`}>
@@ -135,8 +137,10 @@ const PlanCard = ({ plan }) => {
       <div className={`pricing-card ${drop ? 'active' : ''}`}>
         <Title title={info.title} />
         <div className="price-container">
-          {locationObj.loading && <Spin size="medium" />}
-          <Price type={info.id} country={locationObj.locationData.country} />
+          {/* {loading && <Spin size="medium" />} */}
+          <Price type={info.id} country={country} />
+          {/* {locationObj.loading && <Spin size="medium" />}
+          <Price type={info.id} country={locationObj.locationData.country} /> */}
         </div>
         <Button age={plan.age} />
         <div className="pricing-divider" />

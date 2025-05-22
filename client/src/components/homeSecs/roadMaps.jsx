@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import PlanCard from './plan';
-import './roadMaps.scss';
 import { grades } from '../../utils/data';
 import { Tabs } from 'antd';
 import { useMediaQuery } from 'react-responsive';
 import { ImageLoader } from '../../utils/eles';
+import './roadMaps.scss';
 
 const Header = () => {
   const { t } = useTranslation();
