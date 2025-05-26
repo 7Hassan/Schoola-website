@@ -132,8 +132,8 @@ export const getLocalizedPrices = (country) => {
     case 'Egypt':
       return {
         beginner: 600,
-        intermediate: 1500,
-        advanced: 3000,
+        intermediate: 1590,
+        advanced:3690,
         currency: 'ج.م',
       };
     case 'United Arab Emirates':

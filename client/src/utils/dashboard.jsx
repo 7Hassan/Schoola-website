@@ -1,24 +1,17 @@
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
-import Box from '@mui/joy/Box';
 import CircularProgress from '@mui/joy/CircularProgress';
 import LinearProgress from '@mui/joy/LinearProgress';
 import { Image, Space, Tabs, Rate } from 'antd';
-
-// {
-//   "question": "هل البرمجة مناسبة لأي طفل؟",
-//   "answer": "لا، البرمجة مش مناسبة لكل الأطفال. من خلال رحلتنا وتعاملنا مع أطفال، عرفنا إن <span>كل طفل ليه شخصية مختلفة</span>. وهدفنا الأساسي إننا نساعد الطفل يطور ويحسن تفكيره ونظرته للحياة ونكون <span>البوصلة اللي بتوجّهه للطريق المناسب ليه</span>. عشان كده مش كل <span>مجالات البرمجة</span> مناسبة لكل الأطفال. لذلك، <span>قسمنا المناهج على مجالات مختلفة</span>، لأن البرمجة مش شيء واحد، بل مجالات متعددة. مثلاً، عندنا <span>تراك مخصص للأطفال اللي بيحبوا التصميم فقط</span>، لأن لاحظنا إن فيه أطفال شخصيتهم مناسبة للمجال ده. اللي يهمنا هو إن الطفل يطور نفسه فعلاً، يكتشف شخصيته، ويطور مهاراته معانا."
-// },
-
-
-
+import { Progress } from 'antd';
+import { PieChart } from '@mui/x-charts/PieChart';
 
 export const imageTemp = '/icons/businessIcon.png';
 
 export const AvatarsGroup = () => {
   return (
-    <AvatarGroup total={24}>
+    <AvatarGroup total={6} spacing="small">
       <Avatar alt="Remy Sharp" src={imageTemp} />
       <Avatar alt="Travis Howard" src={imageTemp} />
       <Avatar alt="Agnes Walker" src={imageTemp} />
@@ -94,3 +87,66 @@ export const TapsEle = () => (
 
 export const RateEle = () => <Rate defaultValue={3} allowClear={false} />;
 
+export const PieChartEle = () => {
+  const attendPercent = 8;
+  const notAttendPercent = 5;
+  return (
+    <PieChart
+      series={[
+        {
+          data: [
+            {
+              value: attendPercent,
+              color: '#88E7FC',
+            },
+            {
+              value: notAttendPercent,
+              color: '#F13E3E',
+            },
+          ],
+          innerRadius: 54,
+          outerRadius: 80,
+          paddingAngle: 2,
+          cornerRadius: 8,
+          startAngle: 0,
+          // cx: 150,
+          // cy: 150,
+        },
+      ]}
+    />
+  );
+};
+
+export const TrackCard = () => {
+  const percentage = 100;
+  return (
+    <div className="track-card">
+      <div className="info-container row">
+        <div className="icon-text row">
+          <img src="/icons/businessIcon.png" alt="icon" />
+          <div className="text">
+            <div className="title">اسم الكورس اسم الكورس اسم الكورس</div>
+            <div className="dis">
+              وصف الكورس وصف الكورس وصف الكورس وصف الكورس وصف الكورس وصف الكورس
+            </div>
+          </div>
+        </div>
+        <div className="sessions-counter"> 12/7 حصة</div>
+      </div>
+      <div className="line-poeple row">
+        <div className="line">
+          <Progress
+            percent={percentage}
+            type="line"
+            trailColor="rgba(202, 226, 240, 0.40)"
+            showInfo={percentage === 100}
+            strokeColor={percentage === 100 ? '#00E635' : '#FDD835'}
+          />
+        </div>
+        <div className="people">
+          <AvatarsGroup />
+        </div>
+      </div>
+    </div>
+  );
+};

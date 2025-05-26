@@ -1,0 +1,73 @@
+.track-card {
+  background-color: var(--blue);
+  padding: 10px 15px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 20px;
+  color: white;
+
+  .info-container {
+    align-items: start;
+    margin-bottom: 15px;
+
+    .icon-text {
+      align-items: start;
+      gap: 10px;
+
+      img {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+      }
+
+      .text {
+        .title {
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 800;
+          line-height: normal;
+        }
+
+        .dis {
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+      }
+    }
+
+    .sessions-counter {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+      white-space: nowrap;
+    }
+  }
+
+  .line-poeple {
+    width: 100%;
+    .ant-progress-text {
+      color: #00E635 ;
+    }
+
+    .line {
+      flex: 1;
+      color: white;
+    }
+
+    .people {
+      margin-left: 15px;
+
+      .MuiAvatar-root {
+        width: 30px;
+        height: 30px;
+        font-size: 1.1rem;
+
+      }
+    }
+  }
+
+
+}
