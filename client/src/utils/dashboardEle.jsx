@@ -9,7 +9,7 @@ import { PieChart } from '@mui/x-charts/PieChart';
 
 export const imageTemp = '/icons/businessIcon.png';
 
-export const AvatarsGroup = () => {
+export const AvatarsGroupEle = () => {
   return (
     <AvatarGroup total={6} spacing="small">
       <Avatar alt="Remy Sharp" src={imageTemp} />
@@ -86,67 +86,3 @@ export const TapsEle = () => (
 );
 
 export const RateEle = () => <Rate defaultValue={3} allowClear={false} />;
-
-export const PieChartEle = () => {
-  const attendPercent = 8;
-  const notAttendPercent = 5;
-  return (
-    <PieChart
-      series={[
-        {
-          data: [
-            {
-              value: attendPercent,
-              color: '#88E7FC',
-            },
-            {
-              value: notAttendPercent,
-              color: '#F13E3E',
-            },
-          ],
-          innerRadius: 54,
-          outerRadius: 80,
-          paddingAngle: 2,
-          cornerRadius: 8,
-          startAngle: 0,
-          // cx: 150,
-          // cy: 150,
-        },
-      ]}
-    />
-  );
-};
-
-export const TrackCard = () => {
-  const percentage = 100;
-  return (
-    <div className="track-card">
-      <div className="info-container row">
-        <div className="icon-text row">
-          <img src="/icons/businessIcon.png" alt="icon" />
-          <div className="text">
-            <div className="title">اسم الكورس اسم الكورس اسم الكورس</div>
-            <div className="dis">
-              وصف الكورس وصف الكورس وصف الكورس وصف الكورس وصف الكورس وصف الكورس
-            </div>
-          </div>
-        </div>
-        <div className="sessions-counter"> 12/7 حصة</div>
-      </div>
-      <div className="line-poeple row">
-        <div className="line">
-          <Progress
-            percent={percentage}
-            type="line"
-            trailColor="rgba(202, 226, 240, 0.40)"
-            showInfo={percentage === 100}
-            strokeColor={percentage === 100 ? '#00E635' : '#FDD835'}
-          />
-        </div>
-        <div className="people">
-          <AvatarsGroup />
-        </div>
-      </div>
-    </div>
-  );
-};

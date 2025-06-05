@@ -1,0 +1,12 @@
+.page {
+  .container-page {
+    .main-tracker {
+      align-items: flex-start;
+      gap: 10px;
+
+      .tracker {
+        flex: 1;
+      }
+    }
+  }
+}

@@ -1,30 +1,24 @@
 import React from 'react';
 import '../styles/dashboard.scss';
-import {
-  AvatarsGroup,
-  CircularProgressEle,
-  ErrorImage,
-  ImageEle,
-  LinearProgressEle,
-  PieChartEle,
-  RateEle,
-  TapsEle,
-  TrackCard,
-} from '../utils/dashboard';
+import Track from './track';
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className="dashboard">
       <main>
+        <Track />
+        {/*
         <AvatarsGroup />
-        <CircularProgressEle />
         <LinearProgressEle />
+        <CircularProgressEle />
         <ErrorImage />
         <ImageEle />
         <TapsEle />
         <RateEle />
         <TrackCard />
-        <PieChartEle />
+        <Attendance />
+        */}
+
         {/* https://ant.design/components/steps?theme=dark */}
         {/* https://ant.design/components/upload?theme=dark */}
         {/* https://ant.design/components/calendar?theme=dark */}

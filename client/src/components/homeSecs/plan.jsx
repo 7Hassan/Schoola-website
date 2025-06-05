@@ -138,7 +138,7 @@ const PlanCard = ({ plan }) => {
         <Title title={info.title} />
         <div className="price-container">
           {/* {loading && <Spin size="medium" />} */}
-          <Price type={info.id} country={country} />
+          {/* <Price type={info.id} country={country} /> */}
           {/* {locationObj.loading && <Spin size="medium" />}
           <Price type={info.id} country={locationObj.locationData.country} /> */}
         </div>

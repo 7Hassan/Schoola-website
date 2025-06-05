@@ -1,0 +1,87 @@
+.calender {
+  width: 320px;
+  background-color: white;
+  height: fit-content;
+  border-radius: 10px;
+
+  .today-session {
+    padding: 5px 15px 0 7px;
+
+    .h4 {
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--text);
+      margin-bottom: 15px;
+    }
+    
+
+    .session {
+      gap: 10px;
+      $widthDiv: 75px;
+      margin-bottom: 20px;
+      
+
+      .time {
+        padding: 10px 0;
+        font-size: 16px;
+        letter-spacing: 1.2px;
+        opacity: .7;
+        color: var(--text);
+        position: relative;
+        white-space: nowrap;
+        direction: ltr;
+        min-width: $widthDiv;
+        text-align: right;
+
+        &::after {
+          content: '';
+          background-color: #88E7FC;
+          height: 100%;
+          width: 3px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          border-radius: 5px;
+
+        }
+      }
+
+      .text {
+        width: calc(100% - (2 * $widthDiv));
+
+        >div {
+          width: 100%;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          color: var(--text);
+        }
+
+        .title {
+          font-weight: 600;
+          font-size: 14px;
+        }
+
+        .dis {
+          opacity: .7;
+          font-weight: 500;
+          font-size: 12px;
+        }
+      }
+
+      .status {
+        background-color: var(--green);
+        padding: 3px 5px;
+        color: white;
+        border-radius: 15px;
+        font-size: 12px;
+        width: $widthDiv;
+        font-weight: 700;
+        text-align: center;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+}
