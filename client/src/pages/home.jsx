@@ -1,4 +1,4 @@
-import Header from '../components/header/header';
+import Header from '../components/homeSecs/header/header';
 import Hero from '../components/homeSecs/hero';
 import { SoftSkills, HardSkills } from '../components/homeSecs/skills';
 import Students from '../components/homeSecs/students';

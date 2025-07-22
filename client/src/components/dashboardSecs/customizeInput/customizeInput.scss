@@ -1,0 +1,91 @@
+.cu-input {
+  margin-bottom: 20px;
+  width: 100%;
+  position: relative;
+
+  .note {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 10px 0;
+
+    strong {
+      font-size: 15px;
+    }
+  }
+
+
+
+
+  .spin-in {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+  }
+
+  input,
+  select {
+    height: 50px;
+    width: 100%;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid #b1d1e6;
+    background-color: white;
+
+    &.searchInput {
+      padding: 5px 10px 5px 35px;
+    }
+
+    &.readOnly {
+      background-color: #e5e5e5;
+      pointer-events: none;
+    }
+
+    &:focus {
+      border: 1px solid var(--blue);
+
+    }
+  }
+
+  .suggestions {
+    width: 100%;
+    max-height: 200px;
+    background-color: var(--gray-80);
+    overflow: scroll;
+    height: fit-content;
+    padding: 5px 10px 5px;
+    border-radius: 10px;
+
+    position: absolute;
+    z-index: 2;
+
+    li {
+      padding: 10px 0;
+      cursor: pointer;
+      position: relative;
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+
+
+    }
+  }
+}
+
+.row-input {
+  .row {
+    flex-wrap: wrap;
+    gap: 15px;
+    flex-shrink: 1;
+
+
+    .cu-input {
+      min-width: 150px;
+      flex: 1 1 150px;
+    }
+  }
+}

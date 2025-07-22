@@ -10,7 +10,7 @@
     "client/*.*": true,
     "client/src/main.jsx": true,
     "client/src/firebase.jsx": true,
-    "server": true,
+    "server": false,
     "**/README.md": true,
     "**/.gitignore": true,
     ".gitignore": true,
@@ -19,5 +19,6 @@
     "**/schoolaDB.dmm": true,
     "schoolaDB.dmm": true
   },
-  "explorerExclude.backup": {}
+  "explorerExclude.backup": {},
+  "cSpell.words": ["addstudent"]
 }

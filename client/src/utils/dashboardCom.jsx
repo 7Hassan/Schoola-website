@@ -1,6 +1,9 @@
 import { Progress } from 'antd';
 import { PieChart } from '@mui/x-charts/PieChart';
 import { AvatarsGroupEle } from './dashboardEle';
+import axios from 'axios';
+import { Spin } from 'antd';
+import { useEffect, useState } from 'react';
 
 export const TrackCard = () => {
   const percentage = 70;
@@ -65,3 +68,5 @@ export const PieChartEle = () => {
     />
   );
 };
+
+

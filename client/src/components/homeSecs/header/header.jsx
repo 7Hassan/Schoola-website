@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import './header.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe, faBars } from '@fortawesome/free-solid-svg-icons';
-import { whatsAppLink } from '../../utils/eles';
+import { whatsAppLink } from '../../../utils/eles';
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();

@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "@faker-js/faker": "^9.9.0",
     "base64url": "^3.0.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.1",
@@ -44,6 +45,7 @@
     "mongoose": "^6.12.0",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
+    "nanoid": "^3.3.11",
     "node-cron": "^3.0.2",
     "nodemailer": "^6.8.0",
     "path": "^0.12.7",

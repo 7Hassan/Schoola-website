@@ -1,0 +1,38 @@
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .in-container {
+    height: 50px;
+    max-width: 500px;
+    position: relative;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+
+
+    .st-count {
+      font-size: 16px;
+      font-weight: 700;
+
+      span {
+        color: var(--blue);
+      }
+    }
+
+
+    input {
+      width: 100%;
+      height: 100%;
+      font-size: 16px;
+      padding: 5px 20px 5px 40px;
+      border-radius: 30px;
+      border: 1px solid #b1d1e6;
+      background-color: white;
+    }
+  }
+}

@@ -62,7 +62,11 @@ app.use('/auth', limiter);
 app.use(morgan('tiny'));
 app.use(compression())
 // app.use('/auth', require('./routes/auth'));
-app.use('/api', require('./routes/api'));
+// app.use('/api', require('./routes/api'));
+app.use('/api/groups', require('./routes/groupRoutes'));
+app.use('/api/students', require('./routes/studentRoutes'));
+app.use('/api/locations', require('./routes/locationRoutes'));
+app.use('/api/courses', require('./routes/courseRoutes'));
 app.all('*', (req, res, next) => next(new AppError('Not found', 404)));
 app.use(errorHandler);
 

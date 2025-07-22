@@ -1,4 +1,6 @@
 import { OrbitProgress } from 'react-loading-indicators';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck, faCopy } from '@fortawesome/free-solid-svg-icons';
 
 export const PreLoading = () => {
   return (
@@ -49,6 +51,22 @@ export const InfiniteSlider = ({ list, reversed = false, Item }) => {
           </div>
         ))}
       </div>
+    </div>
+  );
+};
+
+export const CopyBtn = ({ value = '', setCopied, copied }) => {
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(value);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+  return (
+    <div className="copy" onClick={copyToClipboard}>
+      {copied && <FontAwesomeIcon icon={faCheck} />}
+      {copied && <span>copied</span>}
+      {!copied && <FontAwesomeIcon icon={faCopy} />}
+      {!copied && <span>copy</span>}
     </div>
   );
 };

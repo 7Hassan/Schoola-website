@@ -1,0 +1,21 @@
+.card-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  justify-content: end;
+
+  .btn {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+    padding: 0;
+  }
+
+  .delete {
+    background-color: red;
+    color: white;
+    border: none;
+
+  }
+}

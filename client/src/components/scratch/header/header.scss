@@ -1,0 +1,218 @@
+$minHeaderHeight: 76px;
+$logoHeight: 40px;
+$menuHeight: 75px;
+$gapDefault: 20px;
+
+header {
+  z-index: 5;
+  position: fixed;
+  inset: 0 auto auto 0;
+  width: 100vw;
+  height: $minHeaderHeight;
+  background-color: #fff;
+  border-bottom: 1px solid #d9ad7e26;
+  font-weight: 400;
+  transition: background-color 0.5s ease, height 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    width: 88%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 25px;
+    padding: 0 5px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .schoola-logo {
+      object-fit: contain;
+      object-position: 0% 50%;
+      height: $logoHeight;
+    }
+  }
+
+  .nav-menu {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: $menuHeight;
+  }
+
+  .navlinks-wrapper {
+    display: flex;
+    align-items: center;
+    gap: $gapDefault;
+    flex: 1 1 auto;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    height: $menuHeight;
+    padding: 0 1vw;
+    font-size: 1vw;
+    font-weight: 700;
+    color: #1f2a55;
+    text-decoration: none;
+    margin: 5px;
+    cursor: pointer;
+
+    &.active-btn {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 100%;
+        height: 4px;
+        background-color: #056FEC;
+        border-radius: 5rem;
+      }
+    }
+
+    .navlink-text {
+      white-space: nowrap;
+    }
+  }
+
+  .navbtns-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: $gapDefault;
+    flex: 1 1 auto;
+
+    .btn {
+      min-width: 170px;
+      font-size: 1.3vw;
+      padding: 10px 20px;
+    }
+  }
+
+  button.lang {
+    border: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+  }
+}
+
+
+
+
+
+/* Tablet */
+@media (max-width: 1024px) {
+  header .container {
+    padding: 0;
+
+  }
+}
+
+/* Small Tablet */
+@media (max-width: 867px) {
+  header {
+    .navlinks-wrapper {
+      gap: 10px;
+    }
+
+    .navbtns-wrapper .btn {
+      min-width: 130px;
+      font-size: 12px;
+    }
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  header {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+
+    &.active {
+      .nav-menu {
+        height: 430px !important;
+      }
+    }
+
+    &.scrolled {
+      background-color: #fff;
+      border-bottom: 1px solid #d9ad7e26;
+    }
+
+    .menu-toggle {
+      display: flex;
+    }
+
+    .h5 {
+      font-size: 18px !important;
+    }
+
+    .container {
+      justify-content: space-between;
+      padding: 0;
+
+      .nav-menu {
+        flex-direction: column;
+        position: absolute;
+        gap: 15px;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        align-items: center;
+        background-color: white;
+        height: 0;
+        overflow: hidden;
+        justify-content: unset;
+        transition: height .3s ease;
+        z-index: -1;
+
+        .navlinks-wrapper {
+          padding-top: calc($minHeaderHeight + 5px) !important;
+
+        }
+
+        .navlinks-wrapper,
+        .navbtns-wrapper {
+          flex: unset;
+        }
+
+        .nav-link {
+          height: 50px;
+        }
+
+        .navlinks-wrapper {
+          flex-direction: column;
+        }
+
+        .navbtns-wrapper .btn {
+          max-width: 100%;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
