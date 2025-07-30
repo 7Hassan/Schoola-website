@@ -14,6 +14,10 @@ import GetStudents from '../subPages/dashboard/getStudents';
 import AddLocation from '../subPages/dashboard/addLocation';
 import AddCourse from '../subPages/dashboard/addCourse';
 import AddGroup from '../subPages/dashboard/addGroup';
+import CoursesTemp from '../pages/coursesTemp';
+import Courses from '../pages/courses';
+import Course from '../pages/course';
+import LessonContent from '../components/courseSec/lessonContent/lessonContent';
 
 const RoutesConfig = () => (
   <Routes>
@@ -27,27 +31,12 @@ const RoutesConfig = () => (
       <Route index path="getstudents" element={<GetStudents />} />
     </Route>
 
-    {/* <Route path="/scratch" element={<Scratch />}>
-      <Route index element={<ScratchHome />} />
-
-      <Route
-        path="lessons"
-        element={
-          <ProtectedRoute>
-            <ScratchLessons />
-          </ProtectedRoute>
-        }
-      />
-
-      <Route
-        path="lessons/:id"
-        element={
-          <ProtectedRoute>
-            <LessonDetails />
-          </ProtectedRoute>
-        }
-      />
-    </Route> */}
+    <Route path="/courses" element={<CoursesTemp />}>
+      <Route index element={<Courses />} />
+      <Route path=":courseId/*" element={<Course />}>
+        <Route path="lesson/:lessonId" element={<LessonContent />} />
+      </Route>
+    </Route>
   </Routes>
 );
 
