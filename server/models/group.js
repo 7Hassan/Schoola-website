@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const { nanoid } = require('nanoid');
 const { generateGroupName } = require('../utils/groupHooks');
 const { validateDocumentExistence } = require('../utils/dbValidation');
-const AppError = require('../Errors/classError');
+const AppError = require('../Errors/classError').default;
 const { trackChanges } = require('../utils/hooks');
 
 const groupSchema = new mongoose.Schema({

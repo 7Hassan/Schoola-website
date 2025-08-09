@@ -1,5 +1,25 @@
 {
   "files.exclude": {
+    "**/.git": false,
+    "**/.svn": false,
+    "**/.hg": false,
+    "**/CVS": false,
+    "**/.DS_Store": false,
+    "**/Thumbs.db": false,
+    "client/src/firebase.js": false,
+    "client/*.*": false,
+    "client/src/main.jsx": false,
+    "client/src/firebase.jsx": false,
+    "server": false,
+    "**/README.md": false,
+    "**/.gitignore": false,
+    ".gitignore": false,
+    "**/LICENSE": false,
+    "Schoola-website": false,
+    "**/schoolaDB.dmm": false,
+    "schoolaDB.dmm": false
+  },
+  "explorerExclude.backup": {
     "**/.git": true,
     "**/.svn": true,
     "**/.hg": true,
@@ -19,6 +39,5 @@
     "**/schoolaDB.dmm": true,
     "schoolaDB.dmm": true
   },
-  "explorerExclude.backup": {},
   "cSpell.words": ["addstudent"]
 }

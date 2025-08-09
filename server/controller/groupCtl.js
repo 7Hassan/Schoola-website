@@ -1,7 +1,7 @@
 const Group = require('../models/group');
 const Student = require('../models/student.js');
 const catchError = require('../Errors/catch')
-const AppError = require('../Errors/classError')
+const AppError = require('../Errors/classError').default
 
 exports.getAllGroups = catchError(async (req, res) => {
   try {

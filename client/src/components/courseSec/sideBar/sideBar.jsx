@@ -1,15 +1,18 @@
 import { Link, useParams } from 'react-router-dom';
 import './sideBar.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faCircleCheck, faClose, faLock } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCircleCheck,
+  faClose,
+  faLock,
+} from '@fortawesome/free-solid-svg-icons';
 import { faCircle } from '@fortawesome/free-regular-svg-icons';
 import { Progress } from 'antd';
 
 const lessonsData = [
-  { id: 1, title: 'مقدمة' },
-  { id: 2, title: 'الدرس الأول' },
-  { id: 3, title: 'الدرس الثاني' },
-  // وهكذا
+  { id: 1, title: 'مقدمة', status: 'completed' },
+  { id: 2, title: 'الدرس الأول', status: 'active' },
+  { id: 3, title: 'الدرس الثاني', status: 'locked' },
 ];
 
 const Header = () => {
@@ -19,7 +22,7 @@ const Header = () => {
         <Progress
           percent={30}
           type="circle"
-          width={50}
+          width={60}
           strokeWidth={10}
           trailColor="#E3EDFF"
         />
@@ -35,13 +38,13 @@ const Header = () => {
 const Lesson = ({ lesson }) => {
   const { courseId, lessonId } = useParams();
   const isActive = lessonId === lesson.id.toString();
-
+  const { status } = lesson;
   return (
     <li className={isActive ? 'active' : ''}>
-      <div className="icon">
-        {/* <FontAwesomeIcon icon={faCircle} /> */}
-        {/* <FontAwesomeIcon icon={faLock} /> */}
-        {/* <FontAwesomeIcon icon={faCircleCheck} /> */}
+      <div className={`icon ${status}`}>
+        {status == 'active' && <FontAwesomeIcon icon={faCircle} />}
+        {status == 'completed' && <FontAwesomeIcon icon={faCircleCheck} />}
+        {status == 'locked' && <FontAwesomeIcon icon={faLock} />}
       </div>
       <Link to={`/courses/${courseId}/lesson/${lesson.id}`}>
         <span>{lesson.title}</span>

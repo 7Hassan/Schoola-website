@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const { nanoid } = require('nanoid');
 const { trackChanges } = require('../utils/hooks');
 const { validateDocumentExistence } = require('../utils/dbValidation');
-const AppError = require('../Errors/classError');
+const AppError = require('../Errors/classError').default;
 
 const studentSchema = new mongoose.Schema({
   name: { type: String, required: true, index: true, unique: true },
@@ -11,18 +11,26 @@ const studentSchema = new mongoose.Schema({
     unique: true,
     sparse: true,
   },
-  age: { type: Number },
+  age: { type: Number, required: true },
   parentPhone: { type: String, required: true, index: true },
   email: { type: String },
+  status: {
+    type: String,
+    enum: ['active', 'archive', 'free-day', 'waiting'],
+    default: 'waiting',
+    required: true,
+  },
   source: { type: String },
   group: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Group',
     index: true,
   },
-  paid: { type: Boolean, default: false },
-  info: { type: String },
-  note: { type: String },
+  paid: {
+    type: String,
+    enum: ['paid', 'unpaid'],
+    default: 'unpaid'
+  }, info: { type: String },
   changes: [
     {
       field: { type: String },

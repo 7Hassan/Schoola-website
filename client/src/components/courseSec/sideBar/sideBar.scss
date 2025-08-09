@@ -54,7 +54,7 @@
     }
 
     ul {
-      margin-inline-start: 1em;
+
 
       li {
         cursor: pointer;
@@ -63,9 +63,19 @@
         align-items: center;
         gap: 5px;
         flex-direction: row;
+        padding-right: 12px;
 
         .icon {
           color: #bbd0f5;
+          font-size: 17px;
+
+          &.completed {
+            color: var(--blue);
+          }
+
+          &.active {
+            color: #9ebff6;
+          }
         }
 
         &:hover {
@@ -73,7 +83,7 @@
         }
 
         &.active {
-          background-color: #FAFAFA;
+          background-color: #e5edfa;
 
           &::before {
             content: "";
